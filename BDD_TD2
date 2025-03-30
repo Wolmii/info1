@@ -1,0 +1,92 @@
+EXO 1 : 
+
+centres <- stages (nom_centre)
+stages <- inscription (no_stage)
+clients <- inscription (no_client)
+
+
+VAR centres BASE RELATION{
+    nom_centre CHARACTER,
+    capacite_centre INTEGER,
+    nom_pays CHARACTER
+} KEY {nom_centre};
+
+VAR stages BASE RELATION{
+    no_stage CHARACTER,
+    niveau_stage INTEGER,
+    nom_centre CHARACTER
+} KEY {no_stage};
+
+VAR clients BASE RELATION{
+    no_client CHARACTER,
+    nom CHARACTER,
+    prenom CHARACTER,
+    adresse CHARACTER,
+    code_postal INTEGER,
+    ville CHARACTER,
+    tel_client INTEGER
+} KEY {no_client};
+
+VAR inscription BASE RELATION{
+    date_inscription INTEGER,
+    no_stage CHARACTER,
+    no_client CHARACTER
+} KEY {no_client, no_stage};
+
+CONSTRAINT stages_fk_centres
+    stage{nom_centre} <= centres{nom_centre};
+
+CONSTRAINT inscription_fk_stages
+    inscription{no_stage} <= stages{no_stage};
+CONSTRAINT inscription_fk_clients
+    inscription{no_client} = clients{no_client};
+
+
+
+
+
+
+EXO 2 : 
+
+VAR fournisseur BASE RELATION{
+    no_fournisseur CHARACTER,
+    nom CHARACTER,
+    ville CHARACTER,
+    budget INTEGER
+} KEY {no_fournisseur};
+
+VAR article BASE RELATION{
+    no_article INTEGER,
+    nom_article CHARACTER,
+    couleur CHARACTER,
+    prix INTEGER
+} KEY {no_article};
+
+VAR projet BASE RELATION{
+    no_projet INTEGER,
+    nom_projet CHARACTER,
+    budget_projet INTEGER,
+    ville_projet CHARACTER
+} KEY {no_projet};
+
+VAR dotation BASE RELATION{
+    quantite_dot INTEGER,
+    no_projet INTEGER,
+    no_article INTEGER,
+    no_fournisseur CHARACTER
+} KEY {no_projet, no_article, no_fournisseur};
+
+VAR nomenclature BASE RELATION{
+    composant 
+    composé
+} KEY {};
+
+CONSTRAINT dotation_fk_fournisseur
+    dotation{no_fournisseur} <= fournisseur{no_fournisseur};
+CONSTRAINT dotation_fk_article
+    dotation{no_article} <= article{no_article};
+CONSTRAINT dotation_fk_projet
+    dotation{no_projet} <= projet{noprojet};
+
+CONSTRAINT _fk_
+    {} <= {};
