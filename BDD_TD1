@@ -1,0 +1,296 @@
+psql -U maregnier -h servbdd pg_maregnier
+create schema distribill ;
+set schema ’distribill’ ;
+DROP SCHEMA IF EXISTS distribill CASCADE ;
+\d
+\d table
+
+requetes : 
+
+-- Elements de correction sur les requêtes du TD1
+
+-- 1.Quels sont les noms des produits commercialisés par l’entreprise ?
+select DISTINCT nomp from produit;
+
+-- 2.Quels sont les produits originaires de ’Dijon’ ?
+select * from produit where origine='Dijon';
+
+-- 3.Quels sont les noms des produits originaires de ’Dijon’ ?
+select nomp from produit where origine='Dijon';
+
+-- 4.Quels sont les numéros des fournisseurs qui fournissent quelque chose ?
+select nofour from fournisseur;
+
+-- 5.Quels sont les numéros des fournisseurs qui ne fournissent rien ?
+select nofour
+from fournisseur 
+except 
+select nofour
+from frourniture;
+
+-- 6.Quels sont les numéros des fournisseurs qui fournissent au moins le produit ’P6’ ?
+select nofour 
+from fourniture 
+where noprod='P6';
+
+-- 7.Quels sont les numéros des fournisseurs qui fournissent quelque chose d’autre que ’P6’ ?
+select nofour 
+from fourniture 
+where noprod<>'P6';
+
+-- 8.Quels sont les numéros des fournisseurs qui ne fournissent pas ’P6’ ?
+select nofour 
+from fournisseur 
+except 
+select nofour 
+from fourniture 
+where noprod='P6';
+
+-- 9.Quels sont les numéros des fournisseurs qui fournissent quelque chose mais pas ’P6’ ? 
+select nofour 
+from fourniture 
+except 
+select nofour 
+from fourniture 
+where noprod='P6';
+
+-- 10.Quels sont les numéros des Fournisseurs qui ne fournissent que ’P6’ ?
+select nofour 
+from fourniture
+except 
+select nofour 
+from fourniture 
+where noprod<>'P6';
+
+-- 11.Quels sont les numéros des fournisseurs qui fournissent ’P4’ ou ’P6’ ?
+select nofour 
+from fourniture 
+where noprod='P6'
+UNION 
+select nofour
+from fourniture
+where noprod='P4';
+
+-- ou 
+select nofour
+from fourniture
+where (noprod='P4' OR noprod='P6');
+
+-- ou
+select nofour
+from fourniture
+where noproduit IN ('P4', 'P6');
+
+-- 12.Quels sont les numéros des fournisseurs qui fournissent ’P4’ et ’P6’ ?
+select nofour 
+from fourniture 
+where noprod='P6' 
+INTERSECT 
+select nofour 
+from fourniture 
+where noprod='P4';
+
+-- 13.Quels sont les numéros des fournisseurs qui ne fournissent ni ’P4’ ni ’P6’ ?
+select nofour 
+from fournisseur 
+except 
+(select nofour 
+from fourniture 
+where noprod='P6' 
+UNION 
+select nofour 
+from fourniture 
+where noprod='P4');
+
+where noprod='P6' or noprod='P4';
+
+-- 14.Quels sont les numéros et noms des fournisseurs qui fournissent ’P6’ ?
+select four.nofour, four.nomf 
+from fournisseur four
+JOIN fourniture f
+on f.nofour = four.nofour
+where f.noprod='P6';
+-- ou
+natural join mais risqué si on connait mal les tables;
+
+-- 15.Quels sont les numéros et noms des fournisseurs qui ne fournissent ni ’P4’ ni ’P6’ ?
+select nofour, nomf 
+from fournisseur 
+except (
+select nofour 
+from fourniture 
+where noprod='P6' 
+UNION 
+select nofour 
+from fourniture
+where noprod='P4');
+-- ou 
+select four.nofour, four.nomf 
+from fournisseur four
+except
+select four.nomf, four.nofour
+from fournisseur as four join fourniture as four
+on four.nofour=f.nofour 
+where noprod='P6' 
+OR
+noprod='P4';
+
+-- 16.Quels sont les numéros,noms et villes des fournisseurs qui fournissent au moins un produit originaire de leur ville ?
+select nofour, nomf, ville
+from fournisseur four
+JOIN fourniture f
+on f.nofour = four.nofour
+JOIN produit
+on fournisseur.ville=produit.origine;
+
+-- ou avec inner join
+
+
+-- 17.Quels sont les produits qui sont de même couleur ? Le résultat sera présenté par des couples de numéros de produits.
+select p2.noprodroduit, p1.noproduit 
+from produit p2, produit p1
+where p2.couleur=p1.couleur 
+and p1.noproduit<>p2.noproduit;
+
+-- 18.Quels sont les produits de même couleur que la salade (certaines salades sont rouges, d’autres vertes ...) ?
+select * 
+from produit 
+join produit as p 
+on produit.couleur=p.couleur
+where produit.noprodroduit!=p.noprodroduit
+and p.nomp="Salade";
+
+-- 19.Quels sont les numéros des fournisseurs qui fournissent des produits verts ou rouges ?
+select nofour 
+from fourniture 
+join produit on fourniture.noprod=produit.noprod 
+where produit.couleur='Vert' 
+or produit.couleur='Rouge';
+
+-- 20.Quels sont les numéros des fournisseurs qui fournissent des produits verts et rouges ?
+select nofour 
+from fourniture 
+join produit on fourniture.noprod=produit.noprod 
+where produit.couleur='Vert' 
+and produit.couleur='Rouge';
+
+-- 21.Quels sont les numéros et noms des fournisseurs qui ne fournissent pas de produit vert ?
+select nomp, nofour
+from fournisseur
+join fourniture on fournisseur.nofour=fourniture.noprod
+except select nofour
+from fourniture
+join produit on fourniture.noproduit=produit.noprodroduit
+where couleur='Vert';
+
+-- 22.Quels sont les numéros et noms des fournisseurs qui ne fournissent que des produits verts ?
+select nomp, nofour
+from fournisseur
+join fourniture on fournisseur.nofour=fourniture.noprod
+except select nofour
+from fourniture
+join produit on fourniture.noproduit=produit.noprodroduit
+where couleur<>'Vert';
+
+-- 23.Quels sont les numéros et noms des fournisseurs qui ne fournissent que des produits verts ou jaunes ?
+select nomp, nofour
+from fournisseur
+join fourniture on fournisseur.nofour=fourniture.noprod
+except select nofour, nomf
+from fourniture
+join fournisseur on fournisseur.nofour=fourniture.noprod
+join produit on fourniture.noproduit=produit.noprodroduit
+where couleur<>'Vert' 
+and couleur<>'Jaune';
+
+--complexe--
+--a Pour chaque fournisseur ayant honoré une commande, la variété en nombre de produits différents commandés.
+select nofour, count(distinct noproduit) 
+from fourniture 
+group by nofour;
+
+--b Pour chaque fournisseur ayant honoré une commande, 
+--la variété en nombre de produits différents commandés ainsi que la quantite globale de produit commandé.
+select nofour, count(distinct noproduit), sum(quantite)
+from fourniture
+group by nofour;
+
+--c Pour chaque fournisseur ayant honoré une commande, 
+--le nombre de produits verts commandés ainsi que la quantité globale de produits verts commandés.
+select nofour, count(distinct fourniture.noproduit), sum(fourniture.quantite)
+from fourniture f
+inner join produit p on f.noproduit=p.noproduit
+where couleur="Vert"
+group by nofour;
+
+--d Les numéros des fournisseurs ayant fourni plus de 2 produits différents.
+select nofour 
+from fourniture 
+group by nofour;
+having count(distinct noproduit)>2;
+
+--e La quantité moyenne de produits fournis par couleurs.
+select avg(quantité) as moy, couleur
+from fourniture
+inner join produit on fourniture.noprod=produit.noprod
+group by couleur;
+
+--f La quantité maximum de produits fournis par noms de fournisseurs (on ne distinguera pas les deux Bourhis dans un premier temps).
+select nomf, max(quantite)
+from fourniture
+join fournisseur on fournisseur.nofour=fourniture.nofour
+group by nomf;
+
+--g Les numéros des fournisseurs fournissant une quantité de produit supérieur à 10.
+select nofour
+from fourniture
+group by nofour
+having sum(quantite) >10;
+
+--h Le nom et la quantité minimum fournie pour chaque produit originaire de Dijon.
+select nomp, min(quantite)
+from produit
+join fourniture on produit.noprodroduit=fourniture.noproduit
+where origine="Dijon"
+group by noproduit
+
+--i Le nombre de fournisseurs différents par couleurs de produits.
+select count(nofour)
+from fourniture
+join produit on produit.noprodroduit=fourniture.noproduit
+group by couleur;
+
+--j Les numéros des fournisseurs ayant fourni la plus grande variété de produits.
+select nofour
+from fourniture
+having count(*)>=all(
+    select count(distinct noproduit) 
+    from fourniture
+    group by nofour
+)
+
+--k Les numéros et noms des fournisseurs qui fournissent la plus grande quantité cumulée de produits verts.
+select nofour, nomf
+from fourniture
+join fournisseur on fournisseur.nofour=fourniture.nofour
+join produit on produit.noprodroduit=fourniture.noproduit
+where couleur="Vert"
+group by nofour
+having sum(*)>=all(
+    select sum(quantite) 
+    from fourniture
+    group by nofour
+)
+
+--l Les numéros des fournisseurs qui fournissent tous les produits originaires de « Dijon ». 
+--On recherchera les fournisseurs dont l’image dans FOURNITURE est égale à l’ensemble des produits originaires de dijon.
+
+
+--m Les numéros des fournisseurs qui fournissent tous les produits originaires de leur ville.
+
+
+--n Les numéros des fournisseurs qui fournissent exactement les mêmes produits. 
+--Le résultat sera représenté sous forme de couples de numéros de fournisseurs.
+
+
+--o Les couples de numéros de fournisseurs qui ne fournissent aucun produit en commun.
