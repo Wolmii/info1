@@ -1,0 +1,76 @@
+CREATE TABLE centres (
+    nom_centre CHARACTER NOT NULL,
+    capacite_centre INT NOT NULL,
+    nom_pays CHARACTER NOT NULL,
+    CONSTRAINT centre_pk
+        PRIMARY KEY (nom_centre),
+);
+
+CREATE TABLE stages (
+    no_stage CHARACTER NOT NULL,
+    niveau_stage INT NOT NULL,
+    nom_centre CHARACTER NOT NULL,
+    CONSTRAINT stage_pk
+        PRIMARY KEY (no_stage),
+    CONSTRAINT stage_fk1 FOREIGN KEY (nom_centre)
+        REFERENCES centres(nom_centre)
+);
+
+CREATE TABLE client (
+    no_client CHARACTER NOT NULL,
+    nom CHARACTER NOT NULL,
+    CONSTRAINT no_client_pk
+        PRIMARY KEY (no_client),
+);
+
+CREATE TABLE inscription (
+    date_inscription CHARACTER NOT NULL,
+    no_stage INT NOT NULL,
+    no_client CHARACTER NOT NULL,
+    CONSTRAINT inscription_pk
+        PRIMARY KEY (no_stage, no_client),
+    CONSTRAINT inscription_fk1 FOREIGN KEY (no_stage)
+        REFERENCES stages(no_stage),
+    CONSTRAINT inscription_fk2 FOREIGN KEY (no_client)
+        REFERENCES client(no_client)
+);
+
+
+EXO 3 : 
+
+CREATE TABLE mer (
+    nom_m CHAR(20) NOT NULL,
+    surface INT NOT NULL,
+    CONSTRAINT mer_pk
+        PRIMARY KEY (nom_m),
+);
+
+CREATE TABLE fleuve (
+    nom_ce CHAR(20) NOT NULL,
+    CONSTRAINT fleuve_pk
+        PRIMARY KEY (nom_m),
+    CONSTRAINT fleuve_fk_cours FOREIGN KEY (nom_ce)
+        REFERENCES cours(nom_ce)
+);
+
+CREATE TABLE cours (
+    nom_ce CHAR(20) NOT NULL,
+    longueur INT NOT NULL,
+    CONSTRAINT cours_pk
+        PRIMARY KEY (nom_ce),
+);
+
+CREATE TABLE affluent (
+    nom_ce CHAR(20) NOT NULL,
+    no_conflue CHAR(20) NOT NULL,
+    CONSTRAINT affluent_pk
+        PRIMARY KEY (nom_ce),
+    CONSTRAINT affluent_fk_cours FOREIGN KEY (nom_ce)
+        REFERENCES cours(nom_ce)
+    CONSTRAINT affluent_fk_cours FOREIGN KEY (no_conflue)
+        REFERENCES cours(nom_ce)
+);
+
+
+    CONSTRAINT fleuve_fk1 FOREIGN KEY (nom_m)
+        REFERENCES mer(nom_m)
