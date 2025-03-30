@@ -1,0 +1,150 @@
+dept <- emp (nodept)
+emp <- dirige(sup)
+emp <- dirige(sub)
+
+
+CREATE TABLE dept (
+    nodept INT NOT NULL,
+    nomDept VARCHAR(20),
+    lieu VARCHAR(20),
+    CONSTRAINT dept_pk
+        PRIMARY KEY (nodept)
+);
+
+CREATE TABLE emp (
+    matr INT NOT NULL,
+    nomE VARCHAR(20),
+    sal NUMERIC(10,2),
+    poste VARCHAR(20),
+    dateEmb DATE,
+    comm NUMERIC(10,2),
+    nodept INT,
+    CONSTRAINT emp_pk
+        PRIMARY KEY (matr),
+    CONSTRAINT affluent_fk_dept FOREIGN KEY (nodept)
+        REFERENCES dept(nodept)
+);
+
+CREATE TABLE dirige (
+    sup INT,
+    sub INT,
+    CONSTRAINT dirige_pk
+        PRIMARY KEY (sup, sub),
+    CONSTRAINT dirige_fk1_emp FOREIGN KEY (sup)
+        REFERENCES emp(matr),
+    CONSTRAINT dirige_fk2_emp FOREIGN KEY (sub)
+        REFERENCES emp(matr)
+);
+
+depuis le terminal : peupler depuis un fichier
+\copy distribill1.emp from '~/Documents/BDD/employe.csv';
+
+depuis postgre :
+WbImport -file=/home/etuinfo/maregnier/Documents/BDD/employe.csv
+         -type=text
+         -header=false
+         -table=distribill1.emp
+         -mode=insert;
+
+2.2 :
+INSERT INTO dirige(sup, sub) values (7839, 7566);
+INSERT INTO dirige(sup, sub) values (7839, 7698);
+INSERT INTO dirige(sup, sub) values (7839, 7782);
+INSERT INTO dirige(sup, sub) values (7566, 7788);
+INSERT INTO dirige(sup, sub) values (7566, 7902);
+INSERT INTO dirige(sup, sub) values (7788, 7876);
+INSERT INTO dirige(sup, sub) values (7902, 7369);
+INSERT INTO dirige(sup, sub) values (7698, 7499);
+INSERT INTO dirige(sup, sub) values (7698, 7521);
+INSERT INTO dirige(sup, sub) values (7698, 7844);
+INSERT INTO dirige(sup, sub) values (7698, 7654);
+INSERT INTO dirige(sup, sub) values (7698, 7900);
+INSERT INTO dirige(sup, sub) values (7782, 7934);
+
+3 : 
+1. Listez les noms des employés du département ‘VENTES’.
+select nomE
+from emp join dept on emp.nodept=dept.nodept
+where nomdept='VENTES'
+
+2. Qui est le directeur du département ‘VENTES’?
+select * 
+from emp 
+join dept on emp.nodept=dept.nodept
+where nomdept='VENTES'
+join dirige on matr=sub 
+where sup='7839';
+
+3. Quel est le département qui vient d’être créé par Distribill? ( il ne dispose pas encore de ressources humaines).
+select nomdept
+from dept
+except nomdept 
+from dept
+join emp on emp.nodept=dept.nodept
+
+4. Quels sont les effectifs en resources humaines de chacun des départements en activité?
+select nodept, count(distinct matr) 
+from emp
+group by nodept;
+
+5. Quels sont les effectifs en ressources humaines de chacun des départements?
+select nodept, count(distinct matr) 
+from emp
+join dept on emp.nodept=dept.nodept
+group by nodept;
+
+6. Quel est le coût global (y compris les commissions) en masse salariale pour Distribill ?
+select sum(sal)+sum(comm)
+from emp
+
+7. Quel est le coût (hors commissions) en masse salariale de chacun des départements?
+select nodept, sum(sal)
+from emp
+group by nodept
+
+8. Quel est le coût (y compris les commissions) en masse salariale de chacun des départements?
+select nodept, sum(sal)+sum(comm)
+from emp
+group by nodept
+
+9. Quels sont les subalternes directs (matr et nom) des directeurs de départements ?
+select matr, nome 
+from emp 
+join dirige on emp.matr=dirige.sub
+join dirige on emp.matr=dirige.sup
+where poste='DIRECTEUR'
+
+10. Quels sont les ingénieurs (matr et nom), subalternes directs des directeurs de départements?
+select matr, nome 
+from emp 
+join dirige on emp.matr=dirige.sub
+where poste='INGENIEUR'
+join dirige on emp.matr=dirige.sup
+where poste='DIRECTEUR'
+
+11. Le directeur du département recherche souhaite passer la main. Quand on lui demande qui lui parait le plus à
+même de prendre sa succession, il répond : le plus ancien de mes plus proches collaborateurs (hiérachiquement
+parlant) qui soit ingénieur. A qui pense-t-il ?
+select matr
+from emp
+join dirige on emp.matr=dirige.sub
+where min(dateemp) and poste='INGENIEUR'
+join dirige on emp.matr=dirige.sup
+where poste='PRESIDENT'
+
+12. Le président de Distribill est l’unique employé qui n’a pas de supérieur hiérarchique. Formulez une requête
+SQL qui verifie le respect de cette contrainte.
+select matr 
+from emp
+join dirige on emp.matr=dirige.sup
+except matr 
+from emp
+join dirige on emp.matr=dirige.sub
+
+13. Le directeur d’un département est l’unique personne au sommet de la hierarchie des employés de ce département.
+Il est un subordonné direct du président. Formulez une requête SQL qui verifie le respect de cette contrainte
+select matr
+from emp
+join dirige on emp.matr=dirige.sub
+where sup='7839'
+join dirige on emp.matr=dirige.sub
