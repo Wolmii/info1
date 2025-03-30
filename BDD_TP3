@@ -1,0 +1,24 @@
+1. Quels sont les subalternes directs de Mercier ?
+select sub
+from dirige
+join emp on emp.matr=dirige.sup
+where nome='MERCIER'
+
+2. Quels sont les subalternes de Mercier sachant que, dans le cas présent, la relation de subordination ainsi
+définie dispose de deux niveaux ?
+select sub
+from dirige
+join emp on emp.matr=dirige.sup
+where nome='MERCIER'
+union 
+select d2.sub 
+from dirige d1 
+join emp on d1.sup=matr 
+join dirige d2 on d2.sup=d1.sub
+where nome='MERCIER'
+
+3. Quels sont les subalternes de Mercier ? On ne fait aucune hypothèse quant au nombre de niveaux de la
+relation de subordination. La requête à élaborer fera usage de la forme recursive de la clause WITH (cf
+documentation Postgresql).
+
+4. Quelle est la fermeture transitive de la relation de subordination.
