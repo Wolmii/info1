@@ -1,0 +1,95 @@
+drop schema if exists "TdVues" cascade;
+
+create schema "TdVues";
+set schema 'TdVues';
+
+create table producteur (
+  raison_sociale    varchar(25),
+  ville             varchar(255),
+  primary key(raison_sociale)
+);
+ 
+create table consommateur (
+  login   varchar(10),
+  email   varchar(50),
+  nom     varchar(50)   not null,
+  prenom  varchar(50)   not null,
+  ville   varchar(255)  not null default 'Lannion',
+  primary key (login, email),
+  unique(nom, prenom, ville)
+);
+
+create table produit(
+  id                  integer,
+  description         varchar(100),
+  produit_par         varchar(25)   not null,
+  consomme_par_login  varchar(10),
+  consomme_par_email  varchar(50),
+  primary key (id),
+  foreign key (produit_par) references producteur(raison_sociale),
+  foreign key (consomme_par_login,consomme_par_email) 
+      references consommateur (login, email)
+);
+
+INSERT INTO producteur(raison_sociale, ville) values ('BONJOUR', 'Bordeaux');
+INSERT INTO producteur(raison_sociale, ville) values ('KFC', 'Lannion');
+INSERT INTO producteur(raison_sociale, ville) values ('BG', 'Lannion');
+INSERT INTO consommateur(login, email, nom, prenom, ville) values (123, 'clemeu@gmail', 'clement', 'roques', 'Pessac');
+INSERT INTO consommateur(login, email, nom, prenom, ville) values (456, 'mathreg@gmail', 'mathilde', 'regnier', 'Gradignan');
+INSERT INTO consommateur(login, email, nom, prenom, ville) values (789, 'val@gmail', 'val', 'lescat', 'Bordeaux');
+INSERT INTO consommateur(login, email, nom, prenom, ville) values (258, 'lucie@gmail', 'lucie', 'madame');
+INSERT INTO consommateur(login, email, nom, prenom, ville) values (147, 'sac@gmail', 'sacha', 'candau');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (8, 'mangue', 'KFC', 456, 'mathreg@gmail');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (6, 'framboise', 'KFC', 456, 'mathreg@gmail');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (7, 'banane', 'BONJOUR', 123, 'clemeu@gmail');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (4, 'fraise', 'KFC', 147, 'sac@gmail');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (5, 'ananas', 'BONJOUR', 123, 'clemeu@gmail');
+INSERT INTO produit(id, description, produit_par, consomme_par_login, consomme_par_email) values (6, 'poire', 'BG', 123, 'lucie@gmail');
+
+create view lannionProducteur as select * from producteur where ville='Lannion'
+
+select * from lannionProducteur;
+
+INSERT INTO lannionProducteur(raison_sociale, ville) values (SAS GIRAUMONT, Rennes);
+-> apparait pas, mais ajoute a la table producteur !!!
+
+drop table lannionProducteur;
+create view lannionProducteur as 
+select * 
+from producteur 
+where ville='Lannion' 
+WITH CHECK OPTION;
+
+INSERT INTO lannionProducteur(raison_sociale, ville) values (SAS GIRAUMONT, Rennes);
+-> apparait pas grace a with check OPTION, pas ajouté a la table producteur !!!
+
+CREATE VIEW NomsConsommateurs AS SELECT nom, prenom FROM Consommateur;
+CREATE VIEW ListeProduits AS SELECT id, description FROM Produit;
+
+insert into NomsConsommateurs(nom, prenom) values ('keren', 'courtois');
+-> pas d insert possible
+
+delete from NomsConsommateurs where nom='lucie';
+-> delete et upgrade marche 
+
+
+( i) Les produits produits et consommés dans la même ville ; 
+create view mmVille as 
+select id, ville 
+from produit p
+join consommateur c on p.consomme_par_login=c.login and p.consomme_par_email=c.email
+join producteur pro as pro.raison_sociale=p.produit_par
+where c.ville=pro.ville;
+
+(ii) les produits qui ne sont pas consommés ;
+create view non as
+select id, description, produit_par
+from produit 
+where consomme_par_email=null and consomme_par_login=null;
+
+(iii) le nombre de produits produits par chaque producteur
+create num as
+select raison_sociale, count(id)
+from producteur
+left join produit pro on pro.raison_sociale=p.produit_par
+group by raison_sociale;
