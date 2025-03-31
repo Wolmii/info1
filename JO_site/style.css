@@ -1,0 +1,4014 @@
+/*=============================================================================================================================================== 
+=                                                           CSS POUR PETIT ECRAN                                                                =
+=================================================================================================================================================*/
+
+@media screen and (max-width: 428px) {
+        
+    body{
+        font-family: 'Montserrat';
+        font-size: 10px;
+        margin: 0;
+        position: relative; /* Crée un contexte pour les blocs absolus */
+        z-index: 0; /* Ne pas perturber les blocs enfants */
+    }
+
+    h1{
+        font-size: 48px;
+        font-family: "Cinzel";
+    }
+
+    
+    h2{
+        font-size: 16px;
+        font-family: "Cinzel";
+        text-transform: uppercase;
+    }
+
+    h3{
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    header {
+        background-color: #141E61;
+        padding: 0 1rem 0.5rem 0.5rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 25px 25px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        z-index: 100;
+
+        a:nth-of-type(1) img {
+            height: 4em;
+        }
+
+        a:nth-of-type(1) {
+            margin-top: 0.5rem;
+            padding: 0.3em;
+            margin-right: 70%;
+        }
+
+        label img {
+            margin-bottom: -15%;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        + * {
+            margin-top: 7%;
+        }
+
+        nav {
+            display: none;
+        }
+
+        /* Hide the checkbox */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Show the menu when the checkbox is checked */
+        #menu-toggle:checked ~ nav {
+            display: block;
+        }
+
+        nav {
+            position: absolute;
+            right: 1.5rem;
+            bottom: -7.42rem;
+            z-index: 0;
+            background-color: #141E61;
+            border-radius: 0 0 0 25px;
+            box-shadow: 
+                -4px 4px 4px 0px rgba(0, 0, 0, 0.25), 
+                inset 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        nav ul li::before {
+            content: '➔';
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-left: 1rem;
+            padding-right: 2rem;
+        }
+
+        nav ul li {
+            position: relative;
+            padding-left: 4rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    footer {
+        background-color: #141E61;
+        border-radius: 25px 25px 0 0;
+        color:white;
+        display: flex;  
+        gap: 8%;
+        padding: 6%;
+        flex-direction: column;
+        align-items: center;
+
+        > div:nth-of-type(1) {
+            order: 1;
+        }
+        > div:nth-of-type(2) {
+            display: flex;
+            flex-direction: column;
+            order: 0;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    
+        > div:nth-of-type(1) > img:nth-of-type(1) {
+            height: 2rem;
+            width: fit-content;
+            position: relative;
+            bottom: 11.5rem;
+            left: 4rem;
+        }
+    
+        > div:nth-of-type(2) > img:nth-of-type(1) {
+            width: 40%;
+            height: auto;
+        }
+        > div:nth-of-type(2) > img:nth-of-type(2) {
+            width: 70%;
+            height: auto;
+        }
+        > div:nth-of-type(2) > img:nth-of-type(3) {
+            width: 60%;
+            height: auto;
+        }
+        > div:nth-of-type(3) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+        > div:nth-of-type(3) > div > p{
+            position: relative;
+            bottom: -11rem;
+            left: 9rem;
+            width: fit-content;
+        }
+        > div:nth-of-type(3) > img {
+            order: 1;
+            height: 10rem;
+            width:fit-content;
+        }
+    }
+
+    .accueil { /*Css de la page d'accueil*/ 
+        h3 {
+            font-size: 13px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 16px; 
+        }
+        h1 {
+            font-size: 48px;
+        }
+        p {
+            font-size: 10px;
+        }
+        img:not(img.carousel) {
+            max-width: 100%;
+            height: auto;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .image_titre {
+            width: 100%;
+            display: block;
+            z-index: -1;
+        }
+        
+        article {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        article > section {
+            background-color: white;
+            padding: 0 10px 10px 10px;
+        }
+        
+        article > section > h3 {
+            text-align: center;
+        }
+        
+        
+        
+        /* Titres entre sections */
+        .titre_article {
+            padding: 20px 0 80px 0;
+            background-image: url(images/accueil/lignes_france.webp);
+            background-repeat: no-repeat;
+            background-size: 100% ;
+            background-position: center top;
+        }
+        
+        .titre_article * {
+            text-align: center;
+            border-radius: 25px;
+            font-family: 'Cinzel', serif;
+            word-wrap: break-word;
+            line-height: 1.2;
+        
+        }
+        
+        .titre_article h1{
+            background-color: #A2D3FD;
+            color: #141E61;
+            width: 95%;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+        
+        .titre_article h1::first-letter {
+            font-family: 'Amoresa', cursive;
+        }
+        
+        .titre_article h2 {
+            width: 50%;
+            padding: 10px 0 10px 0;
+        }
+        
+        .titre_article h2:first-of-type {
+            background-color: #B0125E;
+            color: white;
+            margin: 0 50% -2% auto;
+        }
+        
+        .titre_article h2:only-of-type, .titre_article h2:last-of-type {
+            background-color: #AD5655;
+            color: #FFE26E;
+            margin: -2% auto 0 50%;
+        }
+        
+        
+        
+        /* position des images de sections */
+        article:nth-of-type(1) {
+            gap: 5vw;
+            margin-top: 5%;
+        }
+        
+        article:nth-of-type(1) > section {
+            width: 90%;
+            align-self: center;
+            border-radius: 25px;
+            border: 1px solid black;
+        }
+        
+        article:nth-of-type(1) > img:not(article > section + img) {
+            display: none;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(1) + img {
+            position: absolute;
+            right: 0;
+            margin-top: -35%;
+            height: 35vw;
+            width: auto;
+            z-index: 1;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(2) + img {
+            position: absolute;
+            height: auto;
+            width: 100%;
+            left: 0;
+            margin-top: -25%;
+        }
+        
+        article:nth-of-type(2) {
+            margin-top: 5%;
+            gap: 16vh;
+        }
+    
+        article:nth-of-type(2) > section {
+            width: 50%;
+            border-radius: 25px;
+            border: 1px solid black;
+        }
+    
+        article:nth-of-type(2) > section:nth-of-type(2) {
+            align-self: flex-end;
+        }
+        
+        article:nth-of-type(2) > img:not(article > section + img) {
+            display: none;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(1) + img {
+            position: absolute;
+            height: auto;
+            width: 80%;
+            right: 0;
+            margin-top: -22%;
+            z-index: -1;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(2) + img {
+            position: absolute;
+            height: auto;
+            width: 65%;
+            left: 0;
+            bottom: 18.5%;
+            z-index: -1;
+        }
+        
+        article:nth-of-type(3) {
+            margin-top: -32%;
+        }
+    
+        article:nth-of-type(3) > img:not(article > section + img) {
+            position: absolute;
+            top: 0;
+            height: auto;
+            width: 100%;
+            z-index: -1;
+        }
+        
+        article:nth-of-type(3) > section {
+            width: 85%;
+            align-self: center;
+            border-radius: 25px;
+            border: 1px solid black;
+            margin-top: 60%;
+        }
+    
+        article:nth-of-type(3) > section:nth-of-type(1) + img {
+            display: none;
+        }
+        
+        article:nth-of-type(3) {
+            margin-bottom: 10%;
+        }
+        
+        article:nth-of-type(4) {
+            overflow: hidden;
+            margin-top: -10%;
+            margin-bottom: 5%;
+        }
+        
+        .carousel {
+            width: 800%;
+            height: auto;
+            object-fit: cover;
+            animation: carousel-slide 32s infinite;
+        }
+        
+        article:nth-of-type(5) {
+            margin-top: -10%;
+        }
+    
+        table {
+            position: relative;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-collapse: separate;
+            border-spacing: 0 0.5em;
+        }
+        
+        table tr {
+            outline: 1px solid black;
+            border-radius: 25px;
+        }
+        
+        table td {
+            text-align: left;
+            vertical-align: middle;
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Rank column */
+        table td:first-child {
+            width: 12%;  
+            text-align: center;
+            font-size: 10px;
+        }
+        
+        table td:nth-of-type(2){
+            width: 15%;
+        }
+    
+        table td:nth-of-type(2) > img {
+            margin-top: 10%;
+            height: auto;
+            width: 100%;
+        }
+    
+        table td:nth-child(3) {
+            padding: 0 4%;
+            width: 50%;
+            font-size: 10px;
+            text-align: center;
+        }
+        
+        table td:nth-child(4) span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-right: 0.2em;
+            margin-bottom: 10%;
+        }
+        
+        table td:nth-child(4) span:nth-child(1) {
+        background: #FCC861; /* Gold */
+        }
+        
+        table td:nth-child(4) span:nth-child(2) {
+        background: #E5E5E5; /* Silver */
+        }
+        
+        table td:nth-child(4) span:nth-child(3) {
+        background: #DCB386; /* Bronze */
+        }
+        
+        article figure {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        article figure > figcaption {
+            border-radius: 25px;
+            border: 1px solid black;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content;
+            margin-top: -10%;
+            background-color: white;
+            padding: 0.75em;
+        }
+        
+        article:nth-of-type(6){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 2%;
+            margin-top: -10%;
+        }
+        
+        article:nth-of-type(6) figure {
+            width: 30%;
+            margin: 0;
+            text-align: center;
+        }
+    
+        article:nth-of-type(6) figure:nth-of-type(2) {
+            order: 3;
+        }
+        
+        article:nth-of-type(6) {
+            margin-bottom: 20%;
+        }
+    }
+    
+    .discipline { /*Css de la page de Discipline*/
+        /*Général de la page*/
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+
+        h1 {
+            background-image: url("images/epreuve/image_titre.webp");
+            background-size: cover;
+            color: #fff;
+            font-family: "Cinzel";
+            width: 100%;
+            margin-top: 3%;
+            padding-top: 0.6em;
+            margin-bottom: 0;
+            padding-bottom: 2.4em;
+        }
+        
+        .lettrine{
+            font-family: "Amoresa";
+        }
+        
+        li{
+            font-size: 10px;
+            list-style-type:none;
+        }
+        
+        main{
+            width: 100%;
+        }
+        
+        article{
+            display: flex;
+        }
+        
+        section{
+            margin-bottom: 8%;
+        }
+        
+        .surligner{
+            font-size: 13px;
+            color: #f50022;
+        }
+        
+        section:first-of-type{
+            margin-bottom: 0%;
+        }
+
+        /*Gestion de la première section : le titre*/
+        section:first-of-type{
+            width: 100%;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        
+        /*CSS pour la première partie : Histoire*/
+        /*Général sur la section*/
+        section:nth-of-type(2) > article > div{
+            position: relative;
+            background-color: white;
+            z-index: 1;
+        }
+        
+        section:nth-of-type(2) > article > div > p{
+            padding-left: 1%;
+            padding-right: 2%;
+            padding-bottom: 3%;
+            width: 60%;
+        }
+
+        section:nth-of-type(2) > article > div > div {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            width: 55%;
+            height: 10%;
+            background-color: #f50022;
+        }
+        
+        /*Gestion de la première zone*/
+        section:nth-of-type(2) > article:first-of-type{
+            position: relative;
+        }
+        
+        section:nth-of-type(2) > article:first-of-type > div > img:first-of-type{
+            position:absolute;
+            height: auto;
+            left: 65%;
+            bottom: 0%;
+            z-index: 2;
+            height: 70%;
+        }
+        
+        section:nth-of-type(2) > article:first-of-type > div > img:nth-of-type(2){
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            width: 35%;
+            height: auto;
+            z-index: 1;
+        }
+        
+        /*Gestion de la deuxième zone*/
+        section:nth-of-type(2) > article:nth-of-type(3){
+            position: relative;
+        }
+        
+        section:nth-of-type(2) > article:nth-of-type(3) > div {
+            position: relative;
+            display: flex;
+            z-index: 2;
+            flex-direction: column;
+        }
+        
+        section:nth-of-type(2) > article:nth-of-type(3) > div > ul{
+            width: 55%;
+            margin-left: -5%;
+        }
+        
+        section:nth-of-type(2) > article:nth-of-type(3) > div > img {
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            width: 40%;
+        }
+
+        /*Eléments non visible sur ce format*/
+        section:nth-of-type(2) > article:first-of-type > div > h2:nth-child(2),
+        section:nth-of-type(2) > article:nth-of-type(2) > div > h2,
+        section:nth-of-type(2) > article:nth-of-type(2),
+        section:nth-of-type(2) > article:nth-of-type(3) > div > h2,
+        section:nth-of-type(2) > article:nth-of-type(3) > div:nth-of-type(2),
+        section:nth-of-type(2) > article:nth-of-type(3) > div > img:first-of-type,
+        section:nth-of-type(2) > article:nth-of-type(3) > div > ul > li:nth-of-type(3),
+        section:nth-of-type(2) > article:nth-of-type(3) > div > ul > li:nth-of-type(4)
+        {
+            display: none;
+        }
+        
+
+        /*CSS valable sur la deuxième partie : Règles*/
+        /*Général sur la section*/
+        section:nth-of-type(3){
+            position: relative;
+            display:flex;
+            background-color: #141E61;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        
+        section:nth-of-type(3) > div > p{
+            width: 95%;
+        }
+        
+        section:nth-of-type(3) > img{
+            position: absolute;
+            right: 0%;
+            bottom: 2%;
+            align-self: flex-end;
+            z-index: 3;
+            height: auto;
+            width: 15%;
+        }
+
+        section:nth-of-type(3) > div:first-child {
+            position: relative;
+            z-index: 2;
+            margin: 4%;
+            padding: 3%;
+            border-radius:25px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            background-color: white;
+            width: 70%;
+            height: 80%;
+        }
+        
+        /*Gestion des coins rouges*/
+        section:nth-of-type(3) > div:not(div:first-child){
+            display: flex;
+            align-self: flex-start;
+            width: 10%;
+            height: 20%;
+            background-color: #f50022;
+        }
+        
+        section:nth-of-type(3) > div:nth-of-type(2){
+            position: absolute;
+            top:3%;
+            left:11%;
+            z-index: 1;
+        }
+        
+        section:nth-of-type(3) > div:nth-of-type(3){
+            position: absolute;
+            top:3%;
+            right:11%;
+            z-index: 1;
+        }
+        
+        section:nth-of-type(3) > div:nth-of-type(4){
+            position: absolute;
+            bottom:3%;
+            left:11%;
+            z-index: 1;
+        }
+        
+        section:nth-of-type(3) > div:nth-of-type(5){
+            position: absolute;
+            bottom:3%;
+            right:11%;
+            z-index: 1;
+        }
+
+        
+        /*CSS valable sur la troisième partie : Techniques*/
+        /*Général sur la section*/
+        section:nth-of-type(4){
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            background-color: #4F7FC2;
+        }
+        
+        /*Gestion de l'image*/
+        section:nth-of-type(4)> img {
+            position: sticky;
+            top: 0%;
+            align-self: flex-start;
+            margin-left:0px;
+            margin-right: 0px;
+            width: 30%;
+            height: auto;
+        }
+        
+        /*Gestion de la zone de texte*/
+        section:nth-of-type(4)> div:first-of-type{ 
+            width: 50%;
+            padding:5%;
+            background-color: #141E61;
+            color: #A2D3FD;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+        
+        /*Gestion des zones de couleur*/
+        section:nth-of-type(4)> div:nth-of-type(2){ 
+            width: 10%;
+            background-color: #4F7FC2;
+            margin-left:0px;
+            margin-right: 0px;
+        
+        }
+        section:nth-of-type(4)> div:nth-of-type(3){ 
+            width: 10%;
+            background-color: #A2D3FD;
+            margin-left:0px;
+            margin-right: 0px;
+        }
+        
+        
+        /*CSS valable sur la quatrième partie : Epreuves*/
+        /*Général sur la section*/
+        section:nth-of-type(5){
+            margin-bottom: 100px;
+            margin-bottom: 15%;
+        }
+        
+        section:nth-of-type(5) > h2 {
+            position: relative;
+            display: flex;
+            justify-self: center;
+            background-color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            z-index: 2;
+        }
+
+        section:nth-of-type(5) > div{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        section:nth-of-type(5) > div > article {
+            position: relative;
+            display: inline-block;
+            width: 70%;
+            background-color: #141E61;
+            padding-right: 2%;
+            margin-bottom: 3%;
+            z-index: 2;
+            border-radius: 25px;
+        }
+        
+        section:nth-of-type(5) > div > article > h3{
+            color: white;
+            padding-left: 40px;
+        }
+        
+        section:nth-of-type(5) > div > article > ul > li { 
+            display: block;
+            padding-left: 2%;
+            padding-top: 3%;
+            height: 20px;
+            width: 90%;
+            margin-bottom: 4px;
+            background-color: #A2D3FD;
+        }
+        
+        /*Gestion du survol*/
+        section:nth-of-type(5) > div > article > ul > li:hover{
+            background-color: white;
+        }
+        
+        a{
+            color: #141E61;
+            text-decoration: none;
+        }
+        
+        /*
+        Marche pas
+        section:nth-of-type(5) > div > article > div {
+            background-color: #B0125E;
+            width: 10%;
+        }
+
+        section:nth-of-type(5) > div > article:first-of-type > div:first-of-type {
+            position: absolute;
+            top:-1%;
+            right: -1%;
+        }
+        */
+
+        /*Gestion du rectangle rouge derrière*/
+        section:nth-of-type(5) > div > div{
+            position: absolute;
+            left:5%;
+            top:-5%;
+            border-style: solid;
+            border-color: #f50022;
+            border-width: 1px;
+            width: 90%;
+            height: 105%;
+            display: flex;
+            z-index: 1;
+        }
+        
+
+        /*CSS valable sur la cinquième partie : Profils*/
+        /*Général sur la section*/
+        /*Pas réussi*/
+        section:nth-of-type(6){
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 0%;
+        }
+
+        section:nth-of-type(6) > div{
+            width: 9%;
+            flex-shrink: 0;
+            margin: 5%;
+        }
+
+        section:nth-of-type(6) > div > img:nth-of-type(2){
+            position: relative;
+            width: 70%;
+            margin-left: 50%;
+            border-radius: 50%;
+            z-index: 4;
+        }
+
+        section:nth-of-type(6) > div > img:first-of-type {
+            position: absolute;
+            width: 15%;
+            bottom: 0px;
+            display: flex;
+            z-index: 3;
+        }
+
+        section:nth-of-type(6) > div:nth-of-type(5) > img:first-of-type,
+        section:nth-of-type(6) > div:nth-of-type(6) > img:first-of-type,
+        section:nth-of-type(6) > div:nth-of-type(7) > img:first-of-type,
+        section:nth-of-type(6) > div:nth-of-type(8) > img:first-of-type
+        {
+            margin: 15% 0 0 5%;
+            width: 180%;
+            z-index: 3;
+        }
+
+        section:nth-of-type(6) > div > a > p {
+            position: relative;
+            z-index: 4;
+            padding-left: 20%;
+            font-size: 10px;
+            line-height: 80%;
+            word-wrap: break-word;
+            width: 140%;
+        }
+
+        section:nth-of-type(6) > div:nth-of-type(5){
+            position: absolute;
+            bottom: -120%;
+            left: 10%;
+        }
+        section:nth-of-type(6) > div:nth-of-type(6){
+            position: absolute;
+            bottom: -120%;
+            left: 30%;
+        }
+        section:nth-of-type(6) > div:nth-of-type(7){
+            position: absolute;
+            bottom: -120%;
+            left: 50%;
+        }
+
+        section:nth-of-type(6) > div:nth-of-type(8){
+            position: absolute;
+            bottom: -120%;
+            left: 70%;
+        }
+
+
+
+        /*Gestion des trains marrons et jaunes*/
+        main > div {
+            width: 100%;
+        }
+
+        main > div:first-of-type {
+            position: relative;
+            height: 91px;
+            background-color: #FFE26E;
+            z-index: 1;
+        }
+
+        main > div:nth-of-type(2) {
+            position: relative;
+            top: -75px;
+            height: 80px;
+            background-color: #AD5655;
+            z-index: 2;
+        }
+
+        
+        /*CSS valable sur la cinquième partie : Tableau*/
+        /*Général sur la section*/
+        section:nth-of-type(7){
+            position: relative;
+        }
+        
+        section:nth-of-type(7) > div{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        
+        section:nth-of-type(7) > img:first-of-type {
+            position: absolute;
+            height: 20%;
+            left:-15%;
+            top:-20%;
+            z-index: 3;
+        }
+        
+        /*Gestion du tableau*/
+        table {
+            width: 65%;
+            margin: 0 5% 5%;
+        }
+        
+        tr{
+            margin-bottom: 15px;
+        }
+        
+        table > caption{
+            position: relative;
+            z-index: 2;
+            align-items: center;
+            background-color: #B0125E;
+            color: white;
+            height: 30%;
+            margin-bottom: 1%;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        /*Gestion de la première ligne du tableau*/
+        table > thead > tr > td {
+            text-align: center;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            font-size: 10px;
+        }
+        
+        table > thead > tr > td:nth-of-type(3) {
+            background-color: #FFE26E;
+            color: #FFE26E;
+            border-color: #FFE26E;
+        }
+        
+        table > thead > tr > td:nth-of-type(4) {
+            background-color: #A2D3FD;
+            color: #A2D3FD;
+            border-color: #A2D3FD;
+        }
+        
+        table > thead > tr > td:nth-of-type(5) {
+            background-color: #AD5655;
+            color: #AD5655;
+            border-color: #AD5655;
+        }
+        
+        /*Gestion du corps du tableau*/
+        table > tbody > tr {
+            text-align: center;
+            border-radius: 25px;
+            font-size: 10px;
+            background-color: white;
+            box-shadow: inset 0 0 1px 2px #4F7FC2;
+        }
+
+        section:nth-of-type(7) > div > img{
+            width: 30%;
+        }
+        
+        /*Gestion de l'image de fond*/
+        section:nth-of-type(7) > img:last-of-type {
+            height: 50%;
+            position: absolute;
+            top:54%;
+            left: -50%;
+            z-index: -1;
+        }
+    }
+    
+    .epreuve { /*Css de la page d'épreuve*/
+            
+        /*Modifications générales*/
+
+
+        body{
+            text-align: center;
+        }
+        
+        table{
+            border-collapse: collapse;
+            
+        }
+    
+        thead{
+            background-color: #FFE26E;
+        }
+        tbody{
+            background-color: #fff;
+        }
+        th,td{
+            border: 1px solid #000;
+            font-size: 10px;
+        }
+    
+    
+        /*Modifications liées au Titre*/
+    
+    
+        section>div:first-of-type{
+            background-image: url("images/epreuve/image_titre.webp");
+            background-size: cover;
+            color: #fff;
+            position: relative;
+        }
+        h1:first-of-type::first-letter{
+            font-family: "Amoresa"; src:"polices/Amoresa.ttf";
+        }
+            section>div:first-of-type>h1:nth-of-type(2){
+            font-size: 32px;
+        }
+
+        section>div:first-of-type>h1{
+            text-indent: 0.25em;
+        }
+
+        section>div:first-of-type>h1:nth-of-type(1){
+            padding-top: 10%;
+        }
+
+        /*Modifications liées à la présentation de l'épreuve et du site */
+    
+            section>div:nth-of-type(2){
+            width: 100%;
+            position: relative;
+            top: -2.7em;
+        }
+            section>div:nth-of-type(2)>img{
+            width: 95%;
+            height: auto;
+            position: relative;
+            top:28em;
+            z-index: 0;
+        }
+            section>div:nth-of-type(2)>img:nth-of-type(2){
+            display: none;
+        }
+            section>div:nth-of-type(2)>div{
+            background-color: #141E61;
+            width: 54%;
+            height: 25%;
+        }
+            section>div:nth-of-type(2)>div:first-of-type{
+            width: 66%;
+            position: absolute;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(2){
+            background-color: #fff;
+            width: 40%;
+            height: 52%;
+            position: absolute;
+            left: 60% ;
+            border-radius: 25px;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(2)>img{
+            width: 80%;
+            height: auto;
+            position: relative;
+            top: 15%;
+            z-index: 1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(3){
+            position: absolute;
+            top: 47%;
+            left:46%;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(4){
+            position: absolute;
+            top: 58%;
+            left: 46%;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(5){
+            position: absolute;
+            left: 0;
+            top:125%;
+            z-index: -2;
+    
+        }
+            section>div:nth-of-type(2)>article:first-of-type{
+            width: 95%;
+            height: 68%;
+            position: absolute;
+            top: 20px;
+            background-color: #fff;
+            border-radius: 25px;
+        }
+            section>div:nth-of-type(2)>article:first-of-type>h2{
+            width: 39%;
+            position: relative;
+            left: 17%;
+            top: 10%;
+        }
+            section>div:nth-of-type(2)>article:first-of-type>p{
+            width: 60%;
+            position: relative;
+            left: 2%;
+            top: 15%;
+        }
+    
+    
+            section>div:nth-of-type(2)>article:nth-of-type(2){
+            width: 95%;
+            height: 68%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left:20px;
+            top: 78%;
+            border-radius: 25px;
+            background-color: #fff;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>article:nth-of-type(2)>h2{
+            width: 58%;
+            position: relative;
+            left: 27%;
+        }
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            position: relative;
+        }
+    
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div>img{
+            width: 90%;
+            height: auto;
+            position: relative;
+            left: 2%;
+            top: 15%;
+            margin: 1em;
+        }
+    
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div>p{
+            width: 110%;
+        }
+    
+        
+        /*Modifications liées à l'explication du Déroulement de l'épreuve*/
+    
+            section>article:first-of-type>div{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 28em;
+        }
+            section>article:first-of-type>div>h2{
+            margin: 0;
+        }
+            section>article:first-of-type>div> hr{
+            color: #F50022 ;
+            background-color: #F50022;
+            width:77%;
+            height: 2px;
+            border: solid;
+        }
+    
+            section>article:first-of-type>div>p{
+            width: 68%;
+        }
+    
+            section>article:first-of-type+img{
+            display: none;
+        }
+    
+        
+        /*Modifications liées au podium*/
+    
+    
+            section>div:nth-of-type(3){
+            position: absolute;
+            left: 5%;
+            top: 115em;
+            width: 95%;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>h2{
+            margin: 0;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div{
+            border-radius: 10px;
+            width: 26%;
+            height: 15em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 15px 0;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>img{
+            width: 18%;
+            height: auto;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>div{
+            font-size: 13px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:first-of-type{
+            background-color: #FFE26E;
+        }
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:nth-of-type(2){
+            background-color: #A2D3FD;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:nth-of-type(3){
+            background-color: #AD5655;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>figure{
+            width: 25%;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>figure>img{
+            width: 100%;
+            height: auto;
+        }
+    
+            section>div:nth-of-type(3)>div:first-of-type{
+            background-color: #141E61;
+            width: 90%;
+            height: 20em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            border-radius: 10px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2){
+            background-color: #fff;
+            width: 90%;
+            height: 20em;
+            position: absolute;
+            left: 1em;
+            top: 1em;
+            z-index: 0;
+            border-radius: 10px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(3){
+            background-color: #F50022;
+            width: 90%;
+            height: 20em;
+            position: absolute;
+            left: 2em;
+            top: 2em;
+            z-index: -2;
+            border-radius: 10px;
+        }
+    
+        /*Modifications liées au tableau des résultats*/
+            section>article:nth-of-type(2){
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            position: relative;
+    
+        }
+    
+            section>article:nth-of-type(2)>h2{
+            margin: 0;
+            width: 54%;
+            height: 44px;
+            position: relative;
+            left: 22%;
+            top: 35em;
+        }
+    
+            section>article:nth-of-type(2)> hr{
+            background-color: #141E61;
+            color: #141E61;
+            width: 59%;
+            height: 4px;
+            position: relative;
+            top: 55.5em;
+        }
+    
+            section>article:nth-of-type(2)>div>table{
+            margin: 30px;
+        } 
+    
+            section>article:nth-of-type(2)>div:first-of-type{
+            width: 86%;
+            height: 23em;
+            position: relative;
+            left: 7%;
+            top: 55em;
+            background-color: #fff;
+            z-index: -1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 10px;
+        }
+    
+            section>article:nth-of-type(2)>div:nth-of-type(2){
+            background-color: #141E61;
+            width: 27%;
+            height: 100px;
+            position: absolute;
+            left: 2%;
+            top: 75em;
+            z-index: -2;
+        }
+    
+            section>article:nth-of-type(2)>div:nth-of-type(3){
+            background-color: #141E61;
+            width: 27%;
+            height: 100px;
+            position: absolute;
+            left: 71%;
+            top: 75em;
+            z-index: -2;
+        }
+    
+        /*Modifications liées au Moments Forts de l'épreuve*/
+    
+            section>article:nth-of-type(3){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #141E61;
+            width: 100%;
+            height: 38em;
+            position: relative;
+            top: 60em;
+            z-index: -2;
+        }
+    
+            section>article:nth-of-type(3)>h2{
+            color: #fff;
+            width: 39%;
+            position: absolute;
+            left: 57%;
+            top: 10%;
+        }
+    
+            section>article:nth-of-type(3)>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    
+            section>article:nth-of-type(3)>div>figure{
+            width: 200px;
+            height: 140px;
+        }
+    
+            section>article:nth-of-type(3)>div>div{
+            background-color: #F50022;
+            width: 24%;
+            height: 18%;
+        }
+    
+            section>article:nth-of-type(3)>div>div:first-of-type{
+            position: absolute;
+            left: 0;
+            top: 5%;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(2){
+            position: absolute;
+            left: 34%;
+            top: 32%;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(3){
+            position: absolute;
+            left: 45%;
+            bottom: 7%;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(4){
+            position: absolute;
+            right: 0px;
+            top: 48%;
+            z-index: -1;
+        }
+    
+            section>article:nth-of-type(3)>div>img{
+            width: 44%;
+            height: auto;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+        }
+    
+            section>article:nth-of-type(3)>div>figure>img{
+            width:47% ;
+            height:36% ;
+            position: absolute;
+            left: 10px;
+            top: 30px;
+        }
+    
+            section>article:nth-of-type(3)>div>video{
+            width: 47%;
+            height: 36%;
+            position: absolute;
+            left: 50%;
+            top: 200px;
+        }
+    
+        /*Modifications liées aux Récapitulatif des records*/
+    
+            section>article:nth-of-type(4){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            top: 80em
+        }
+    
+            section>article:nth-of-type(4)>h2{
+            width: 88%;
+            margin: 0;
+            position: relative;
+            top: -10em;
+        }
+    
+            section>article:nth-of-type(4)>div>table{
+            width: 93%;
+            height: 90%;
+            margin: 4vh;
+            margin-top: 6vh;
+        }
+    
+            section>article:nth-of-type(4)>div:first-of-type{
+            background-color: #fff;
+            width: 88%;
+            position: relative;
+            top: -15em;
+            z-index: -1;
+            border-radius: 10px;
+        }
+    
+            section>article:nth-of-type(4)>div:nth-of-type(2){
+            background-color: #F50022;
+            width: 88%;
+            height: 80%;
+            position: absolute;
+            left: 10%;
+            top:-9em;
+            border-radius: 10px;
+            z-index: -2 ;
+        }
+    
+            section>article:nth-of-type(4)>img{
+            display: none;
+        }
+    
+        /*Modifications liées au footer*/
+    
+        +footer{
+            position: relative;
+            top: 70em;
+            border: 1px solid;
+        }
+    }
+
+    .profil { /*Css de la page de profil*/
+        /**********************************************************************/
+        /*mise en forme des images*/
+        /**********************************************************************/
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        .section1 > img { /*image des médailles*/
+            position: absolute;
+            top: -150px;
+            width: 90%;
+            height: 70px;
+            left: 5%;
+            transition: all 0.2s linear; 
+        }
+    
+        .section1 > img:hover {
+            transform: scale(1.2) translateY(10px) ;
+        }
+    
+        .drapeau_france{ /*image du drapeau francais circulaire*/
+            width: 125px;
+            height: 125px;
+            position: relative;
+            left: -50px;
+            top: -30px;
+        }
+    
+        section > figure > img:last-child { /*image du logo de natation*/
+            width: 180px;
+            height: 135px;
+            position: relative;
+            left: 80px;
+            top: -200px;
+        }
+    
+        section > nav > img { /*groupe des images de insta, facebook et hashtag*/
+            width: 50px;
+            height: 50px;
+            position: relative;
+            left: 15px;
+            top: -300px;
+        }
+    
+        /**********************************************************************/
+        /*mise en forme de la premiere section*/
+        /**********************************************************************/
+    
+        .section1{ /*image de léon marchand*/
+            position: relative; /*permet de ne pas influer sur le positionnement des autres éléments*/
+            background-color: #141E61;
+            height: 450px;
+            width: 100%;
+            margin-bottom: 10%;
+            margin-top: 150px;
+        }
+    
+        .image_Léon {
+            position: relative;
+            margin-top: 100px;
+            width: 100%;
+        }
+    
+        .section1 > figure { /*images de le france et natation*/
+            display: flex;
+            flex-direction: column; /*permet d'influer sur la direction des éléments, ils sont tous en colonne*/
+            justify-content: center; /*place les éléments au milieu du bloc parent*/
+            position: relative; /*place précisement les éléments*/
+            bottom: 30px;
+            padding: 10px;
+        }
+    
+        .section1 > nav { /*images des logos insta et tout*/
+            display: flex;
+            flex-direction: row; /*permet d'influencer sur la direction des éléments, ils sont tous en ligne*/
+            position: relative;
+            left: 0%;
+            bottom: -20px;
+        }
+    
+        .section1 > figure > img { /*images de la france et du logo de la natation*/
+            padding: 20px; /*espace les éléments entre eux*/
+        }
+    
+        .section1 > nav > img { /*images insta, facebook et hashtag*/
+            padding: 30px; /*espace les éléments entre eux*/
+        }
+    
+        .section1 > h1 { /*titre leon marchand*/
+            top: 10px;
+            position: relative;
+            bottom: 50px;
+            color: white;
+            font-size: 48px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            padding: 3px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+    
+        .section1 > h1::first-letter { /*premiere lettre du titre*/
+            font-family: 'Amoresa', cursive;
+        }
+    
+        /**********************************************************************/
+        /*mise en forme de la deuxième section*/
+        /**********************************************************************/
+    
+        .section2 { /*classe définissant la deuxième section*/
+            position: relative;
+            margin-top: 100px;
+            z-index: 1; /*pour mettre en avant plan car les autres parties se saccadet*/
+            background-color: #141E61;
+            padding: 10px;
+            margin-bottom: 5%;
+        }
+    
+        .section2 > h2 { /*sous titre de la deuxième partie*/
+            display: flex;
+            justify-content: center;
+            font-variant: small-caps;
+            color: #fff;
+            font-weight:bold;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+    
+        .section2 > article { /*article de la deuxième partie*/
+            position: relative;
+            height: auto;
+            width: 70%;
+            z-index: 1;
+            background-color: #fff;
+            border-radius: 65px;
+            padding: 50px;
+            margin-bottom: 60px;
+            left: 1%;
+            top: 30px;
+        }
+    
+        .section2 > article > h3 { /*sous-titre de la deuxième partie*/
+            font-size: 13px;
+        }
+    
+        .section2 > article > h3 + p { /*paragraphe de la deuxième partie*/
+            font-size: 10px;
+            text-align:left;
+            position: relative;
+            left: 3%;
+    
+        }
+    
+        .section2 > article > h3 + ul + h3 {
+            position: relative;
+            left: 3%;
+            font-size: 13px;
+        }
+    
+        .section2 > article > ul > li { /*liste de l'article de la dexième partie*/
+            font-size: 10px;
+        }
+    
+        .block_rouge1, .block_rouge2, .block_rouge3, .block_rouge4 {
+            position: absolute; /* Positionnement absolu relatif à .section2 */
+            background-color: red;
+            width: 150px; /* Largeur des carrés */
+            height: 70px; /* Hauteur des carrés */
+        }
+    
+        .block_rouge1 { /*mise en place des blocks rouges en arrière plan*/
+            top: 12%;
+            left: 2%;
+        }
+    
+        .block_rouge2 {
+            bottom: 30px;
+            left: 2%;
+        }
+    
+        .block_rouge3 {
+            top: 12%;
+            right: 3%;
+        }
+    
+        .block_rouge4 {
+            bottom: 30px;
+            right: 3%;
+        }
+    
+        /**********************************************************************/
+        /*mise en place de la 3eme section, club de sport*/
+        /**********************************************************************/
+    
+        .section3 { /*classe définissant la troisième partie*/
+            position: relative;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            background-color: #fff;
+            border: 15px solid black;
+            background-image: url(images/profil/club_dauphins_TOEC.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain; /*image redimmensionné proportionnellement*/
+            height: 700px;
+            width: 88.7%;
+    
+        }
+    
+        .section3 > article {
+            position: relative;
+            z-index: 5;
+            margin: 1%;
+        }
+    
+        .section3 > article > div {  /*conteneur de l'image*/
+            display: flex; /*conteneur de l'image en flex pour pouvoir placer l'image au milieu*/
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px; 
+        }
+    
+        .section3 > article > div > img { /*image du dauphin du TOEC*/
+            position: absolute;
+            z-index: -1;
+            width: 150px; 
+            height: 150px;
+            top: 520px;
+            right: 1px;
+        }
+    
+        section > article > h2 { /*sous-titre de la troisième partie*/
+            position: relative;
+            left: 4%;
+            font-size: 48px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+    
+        section > article > h2 + h3 {
+            position: relative;
+            font-size: 13px;
+            text-align: center;
+            top: 20px;
+        }
+    
+        section > article > h2 + h3 + p {
+            position: absolute;
+            left: 10%;
+            bottom: -350px;
+            width: 70%;
+            font-size: 10px;
+        }
+    
+        .block_bleu1, .block_bleu2 {
+            position: absolute; /* Positionnement absolu relatif à .section2 */
+            z-index: -1;
+            background-color: #141E61;
+            width: 90%; /* Largeur des carrés */
+            height: 40%; /* Hauteur des carrés */
+        }
+        .block_bleu1 {
+            bottom: -8%;
+            right: -9%;
+        }
+    
+        .block_bleu2 {
+            top: -8%;
+            left: -10%;
+        }
+    
+        /**********************************************************************/
+        /*mise en place du titre et de la 4eme partie*/
+        /**********************************************************************/
+    
+        .separateur {
+            background-color: #141E61;
+            margin-top: 20%;
+            width: 90.5%;
+            padding: 2em;
+            height: 70px;
+            justify-content: center;
+            background-image: url(images/header/logo_flamme_JO.webp);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 50px 50px;
+            color: #fff;
+        }
+    
+        .separateur >  h2 {
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            top: 40px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+    
+        .table1 {
+            display: none;
+        }
+    
+        .article1 > img {
+            display: none;
+        }
+    
+        .table2 {
+            margin-top: 20%;
+            height: 500px;
+            width: 300px;
+            margin-left: 5%;
+            border-collapse: collapse;
+            border: 5px solid black;
+        }
+    
+        td {
+            text-align: center;
+            border-width: 3px;
+            border: 1px solid black;
+    
+        }
+    
+        .table2 tr:first-of-type td:first-of-type{
+            background-color: #FFE26E;
+            background-image: url(images/profil/medaille_1.webp);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 50px;
+        }
+    
+        .table2 tr:nth-of-type(5) td:first-of-type {
+            background-color: #A2D3FD;
+            background-image: url(images/profil/medaille_2.webp);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 50px;
+        }
+    
+        .table2 tr:nth-of-type(7) td:first-of-type {
+            background-color: #AD5655;
+            background-image: url(images/profil/medaille_3.webp);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 50px;
+        }
+    
+        .article1 > table > thead > tr > th + th + th {
+            background-color: #A2D3FD;
+        }
+    
+        .article1 > table > thead > tr > th + th {
+            background-color: #FFE26E;
+        }
+    
+        /**********************************************************************/
+        /*mise en place de la 5eme partie*/
+        /**********************************************************************/
+    
+        .section5 {
+            display: flex;
+            flex-direction: column; /* Aligne les éléments en colonne */
+            justify-content: center; /* Centre les éléments verticalement */
+            align-items: center; /* Centre les éléments horizontalement */
+            width: 90%; /* Prend toute la largeur de la page */
+            height: auto; /* Prend toute la hauteur de la page */
+            padding: 20px; /* Optionnel, ajoute un peu d'espace autour des éléments */
+        }
+    
+        .section5 > article {
+            margin-top: 50px;
+            background-color: #141E61;
+            height: auto;
+            color: #fff;
+            width: 60%;
+            min-width: 200px;
+            height: auto;
+            margin-bottom: 50px;
+        }
+    
+        .section5 > article > video {
+            width: 150px; /* Ajuste la largeur pour qu'elle s'adapte */
+            height: 80px;
+            background-color: black;
+            position: relative;
+            left: 15%;
+            margin-top: 10px;
+            transition: all 0.2s linear;
+        }
+    
+        video:hover {
+            transform: scale(2) translateY(10px) ;
+            z-index: 4;
+        }
+    
+        .section5 > article > p {
+            font-size: 10px;
+            margin: 5%;
+            position: relative;
+        }
+    
+        .section5 > article > h3 {
+            font-size: 18px;
+            top: 10%;
+        }
+    
+        .section5 > article > p + h3 + p {
+            font-size: 10px;
+        }
+
+        .section5 > article > img {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .section5 > img {
+            display: none;
+        }
+    }
+}
+
+/*=============================================================================================================================================== 
+=                                                           CSS POUR ECRAN LARGE                                                                =
+=================================================================================================================================================*/
+    
+@media screen and (min-width: 429px) {
+
+    body{
+        font-family: 'Montserrat';
+        font-size: 16px;
+        margin: 0;
+        position: relative; /* Crée un contexte pour les blocs absolus */
+        z-index: 0; /* Ne pas perturber les blocs enfants */
+    }
+    
+    h1{
+        font-size: 128px;
+        font-family: "Cinzel";
+        }
+        
+    h2{
+        font-size: 48px;
+        font-family: "Cinzel";
+        text-transform: uppercase;
+    }
+    
+    h3{
+        font-size: 36px;
+        font-family: "Cinzel";
+        font-weight: bold;
+    }
+    
+    header {
+        background-color: #141E61;
+        padding: 0 1rem 0.5rem 0.5rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 25px 25px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        a:nth-of-type(1) img {
+            height: 4em;
+        }
+
+        a:nth-of-type(1) {
+            padding: 0.3em;
+            margin-right: 22%;
+        }
+    
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 18%;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 2em;
+            transition: color 0.3s;
+        }
+    
+        nav ul li a:hover {
+            color: #FFE26E;
+        }
+    
+        input {
+            display: none;
+        }
+    
+        label {
+            display: none;
+        }
+        
+
+        + * {
+            margin-top: 4%;
+        }
+    }
+
+    footer {
+        background-color: #141E61;
+        border-radius: 25px 25px 0 0;
+        display: flex;
+        gap: 8%;
+        padding: 2%;
+
+        p {
+            color: white;
+        }
+    
+        div > p {
+            margin-top: auto;
+        }
+    
+        div {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+        }
+    
+        > div:nth-of-type(1) > img:nth-of-type(1) {
+            height: 12%;
+            width: min-content;
+            margin-top: 15%;
+        }
+    
+        > div:nth-of-type(2) {
+            align-items: center;
+        }
+    
+        > div:nth-of-type(2) > img:nth-of-type(1) {
+            width: 70%;
+            height: auto;
+        }
+    
+        > div:nth-of-type(3) {
+            flex-direction: row;
+            gap: 4%;
+        }
+    
+        > div:nth-of-type(3) > img:nth-of-type(1) {
+            height: 40%;
+            width: auto;
+            margin-top: auto;
+        }
+    
+        > div:nth-of-type(3) > div {
+            margin-right: 10%;
+        }
+    
+        > div:nth-of-type(3) > div > p {
+            margin-left: auto;
+        }
+    }
+    
+    .accueil { /*Css de la page d'accueil*/
+        h3 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 48px; 
+        }
+        h1 {
+            font-size: 128px;
+        }
+        p {
+            font-size: 16px;
+        }
+        img:not(img.carousel) {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .image_titre {
+            width: 100%;
+            display: block;
+            z-index: -1;
+        }
+        
+        .image_titre + * {
+            margin-top: -170px;
+        }
+        
+        article {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        article > section {
+            background-color: white;
+            padding: 20px 15px 30px 15px;
+        }
+        
+        article > section > h3 {
+            margin: 0 0 25px 0;
+        }
+        
+        article > section > p {
+            margin: 0 0 0 25px;
+        }
+        
+        
+        
+        /* Titres entre sections */
+        .titre_article {
+            padding: 120px 0 300px 0;
+            background-image: url(images/accueil/lignes_france.webp);
+            background-repeat: no-repeat;
+            background-size: 100% ;
+            background-position: center top;
+        }
+        
+        .titre_article * {
+            text-align: center;
+            border-radius: 25px;
+            font-family: 'Cinzel', serif;
+            word-wrap: break-word;
+            line-height: 1.2;
+        
+        }
+        
+        .titre_article h1{
+            background-color: #A2D3FD;
+            color: #141E61;
+            width: 70%;
+            padding-top: 40px;
+            margin: 0 auto;
+        }
+        
+        .titre_article h1::first-letter {
+            font-family: 'Amoresa', cursive;
+        }
+        
+        .titre_article h2 {
+            width: 30%;
+            padding: 30px 0 20px 0;
+        }
+        
+        .titre_article h2:first-of-type {
+            background-color: #B0125E;
+            color: white;
+            margin: 0 60% 0 auto;
+        }
+        
+        .titre_article h2:only-of-type, .titre_article h2:last-of-type {
+            background-color: #AD5655;
+            color: #FFE26E;
+            margin: 0 auto 0 60%;
+        }
+        
+        
+        
+        /* position des images de sections */
+        article:nth-of-type(1) {
+            gap: 10vw;
+        }
+        article:nth-of-type(1) > section {
+            width: 64%;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(odd) {
+            margin-right: auto;
+            margin-left: 0;
+            border-radius: 0 25px 25px 0;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(even) {
+            margin-left: auto;
+            margin-right: 0;
+            border-radius: 25px 0 0 25px;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(odd) {
+            margin-right: auto;
+            margin-left: 0;
+            border-radius: 0 25px 25px 0;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(even) {
+            margin-left: auto;
+            margin-right: 0;
+            border-radius: 25px 0 0 25px;
+        }
+        
+        article:nth-of-type(1) > img:not(article > section + img) {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+            border-radius: 25px;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(1) + img {
+            position: absolute;
+            right: 0;
+            margin-top: -20%;
+            height: 35vw;
+            width: auto;
+            z-index: 1;
+        }
+        
+        article:nth-of-type(1) > section:nth-of-type(2) + img {
+            position: absolute;
+            height: auto;
+            width: 100%;
+            left: 0;
+            margin-top: 20px;
+        }
+        
+        article:nth-of-type(2) {
+            margin-top: -10%;
+            gap: 70vh;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(1) {
+            margin-top: 10%;
+            width: 35%;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(2) {
+            width: 35%;
+        }
+        
+        article:nth-of-type(2) > img:not(article > section + img) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: auto;
+            max-width: 95%;
+            max-height: max-content;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+            border-radius: 25px;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(1) + img {
+            position: absolute;
+            height: auto;
+            width: 50%;
+            left: 8%;
+            margin-top: -7.6%;
+            z-index: -1;
+        }
+        
+        article:nth-of-type(2) > section:nth-of-type(2) + img {
+            position: absolute;
+            height: auto;
+            width: 35%;
+            right: 20%;
+            bottom: 10%;
+            z-index: -1;
+        }
+        
+        article:nth-of-type(3) > img:not(article > section + img) {
+            position: absolute;
+            top: 0;
+            height: auto;
+            width: 95%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            border-radius: 25px;
+        }
+        
+        article:nth-of-type(3) > section:nth-of-type(1) + img {
+            position: absolute;
+            height: auto;
+            width: 30%;
+            margin-top: -15%;
+        }
+        
+        article:nth-of-type(3) > section:nth-of-type(1) {
+            width: 50%;
+            margin-right: 0;
+            margin-left: auto;
+            border-radius: 25px 0 0 25px;
+            margin-top: 50%;
+        }
+        
+        article:nth-of-type(3) {
+            margin-bottom: 10%;
+        }
+        
+        article:nth-of-type(4) {
+            overflow: hidden;
+        }
+        
+        .carousel {
+            width: 800%;
+            height: auto;
+            object-fit: cover;
+            animation: carousel-slide 32s infinite;
+        }
+        
+        table {
+            position: relative;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-collapse: separate;
+            border-spacing: 0 2em;
+        }
+        
+        table tr {
+            outline: 4px solid black;
+            border-radius: 25px;
+        }
+        
+        table td {
+            text-align: left;
+            vertical-align: middle;
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Rank column */
+        table td:first-child {
+            width: 12%;  
+            text-align: center;
+            font-size: 96px;
+        }
+        
+        table td:nth-child(3) {
+            padding: 0 4%;
+            width: 50%;
+            font-size: 48px;
+            text-align: center;
+        }
+        
+        table td:nth-child(4) span {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-right: 0.2em;
+        }
+        
+        table td:nth-child(4) span:nth-child(1) {
+        background: #FCC861; /* Gold */
+        }
+        
+        table td:nth-child(4) span:nth-child(2) {
+        background: #E5E5E5; /* Silver */
+        }
+        
+        table td:nth-child(4) span:nth-child(3) {
+        background: #DCB386; /* Bronze */
+        }
+        
+        article figure {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        article figure > figcaption {
+            border-radius: 25px;
+            border: 1px solid black;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content;
+            margin-top: -10%;
+            background-color: white;
+            padding: 0.75em;
+        }
+        
+        article:nth-of-type(6){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            gap: 16px;
+        }
+        
+        article:nth-of-type(6) figure:nth-of-type(1), article:nth-of-type(6) figure:nth-of-type(2) {
+            width: calc(50% - 100px);
+            text-align: center;
+        }
+        
+        article:nth-of-type(6) figure:nth-of-type(3) {
+            width: 100%;
+            margin-top: 16px;
+        }
+        
+        article:nth-of-type(6) {
+            margin-bottom: 20%;
+        }
+    }
+    
+    .discipline { /*Css de la page de Discipline*/
+        /*Général*/
+        overflow: hidden;
+
+        h1 {
+            background-image: url("images/epreuve/image_titre.webp");
+            background-size: cover;
+            color: #fff;
+            height: 850px;
+            width: 100%;
+            margin:0;
+            text-align: right;
+            padding-top: 0.25em;
+            padding-right: 0.25em;
+        }
+
+        .lettrine{
+            font-family: "Amoresa";
+        }
+
+        li{
+            font-size: 16px;
+            list-style-type:none;
+        }
+
+        main{
+            width: 100%;
+        }
+
+        article{
+            display: flex;
+        }
+
+        section{
+            margin-bottom: 8%;
+        }
+
+        .surligner{
+            font-size: 25px;
+            color: #f50022;
+        }
+
+        section:first-of-type{
+            margin-bottom: 0%;
+        }
+
+        /*CSS pour le titre*/
+        section:first-of-type{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        section:first-of-type > img{
+            width: 100%;
+        }
+
+        /*CSS pour la peemière partie : Histoire*/
+        /*Général sur la section*/
+        section:nth-of-type(2) > article > div{
+            position: relative;
+            padding:20px;
+            background-color: white;
+            z-index: 1;
+            margin-bottom: 5%;
+        }
+
+        section:nth-of-type(2) > article > div > p{
+            padding-left: 5%;
+            padding-right: 10%;
+            padding-bottom: 3%;
+            width: 60%;
+        }
+
+        /*Le premier article de la section*/
+        section:nth-of-type(2) > article:first-of-type{
+            position: relative;
+        }
+
+        section:nth-of-type(2) > article:first-of-type > img {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        section:nth-of-type(2) > article:first-of-type > div > img:first-of-type{
+            position:absolute;
+            left: 65%;
+            bottom: 0%;
+            z-index: 2;
+            width: 10%;
+        }
+
+        section:nth-of-type(2) > article:first-of-type > div > img:nth-of-type(2){
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            width: 30%;
+            z-index: 1;
+        }
+
+        /*Le deuxième article de la section*/
+        section:nth-of-type(2) > article:nth-of-type(2){
+            position: relative;
+            margin-bottom: 6%;
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(2) > div:nth-of-type(2){
+            position: absolute;
+            width: 65%;
+            left:29%;
+            top:20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        /*Le troisième article de la section*/
+        section:nth-of-type(2) > article:nth-of-type(3){
+            position: relative;
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(3) > div {
+            position: relative;
+            margin-left: 3%;
+            display: flex;
+            z-index: 2;
+            flex-direction: column;
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(3) > div > ul{
+            width: 55%;
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(3) > div > img {
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            width: 30%;
+        }
+
+        /*Les formes de couleurs*/
+        section:nth-of-type(2) > article > div > div {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            width: 55%;
+            height: 10%;
+            background-color: #f50022;
+
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(2) > div:first-of-type{
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 50%;
+            width: 30%;
+            background-color: #B0125E;
+            display: flex;
+            z-index: 1;
+        }
+
+        section:nth-of-type(2) > article:nth-of-type(3) > div:last-of-type{
+            position: absolute;
+            bottom: -5%;
+            left: -2%;
+            display: flex;
+            z-index: 1;
+            background-color: #AD5655;
+            height: 30%;
+            width: 45%;
+        }
+
+        /*Ce qui n'apaprait pas dans ce format*/
+        section:nth-of-type(2) > article:first-of-type > div > h2:first-of-type,
+        section:nth-of-type(2) > article:nth-of-type(3) > div > img:nth-of-type(2)
+        {
+            display: none;
+        }
+
+
+        /*CSS valable sur la deuxième partie : Règles*/
+        /*Général sur la section*/
+        section:nth-of-type(3){
+            position: relative;
+            display:flex;
+            background-color: #141E61;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        section:nth-of-type(3) > div > p{
+            width: 95%;
+        }
+
+        section:nth-of-type(3) > img{
+            position: absolute;
+            right: 4%;
+            bottom: 2%;
+            align-self: flex-end;
+            z-index: 3;
+        }
+
+        /*Concernant la partie du texte*/
+        section:nth-of-type(3) > div:first-child {
+            position: relative;
+            z-index: 2;
+            margin: 4%;
+            padding: 3%;
+            border-radius:25px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            background-color: white;
+            width: 70%;
+            height: 80%;
+        }
+
+        /*Les formes rouges sur les côtés*/
+        section:nth-of-type(3) > div:not(div:first-child){
+            display: flex;
+            align-self: flex-start;
+            width: 250px;
+            height: 250px;
+            background-color: #f50022;
+        }
+
+        section:nth-of-type(3) > div:nth-of-type(2){
+            position: absolute;
+            top:3%;
+            left:11%;
+            z-index: 1;
+        }
+
+        section:nth-of-type(3) > div:nth-of-type(3){
+            position: absolute;
+            top:3%;
+            right:11%;
+            z-index: 1;
+        }
+
+        section:nth-of-type(3) > div:nth-of-type(4){
+            position: absolute;
+            bottom:3%;
+            left:11%;
+            z-index: 1;
+        }
+
+        section:nth-of-type(3) > div:nth-of-type(5){
+            position: absolute;
+            bottom:3%;
+            right:11%;
+            z-index: 1;
+        }
+
+
+        /*CSS valable sur la troisième partie : Techniques*/
+        /*Général sur la section*/
+        section:nth-of-type(4){
+            display: flex;
+            flex-direction: row;
+            background-color: #4F7FC2;
+        }
+
+        /*L'image de la section*/
+        section:nth-of-type(4)> img {
+            align-self: flex-end;
+            margin-left:0px;
+            margin-right: 0px;
+            width: 30%;
+            height: 100%;
+        }
+
+        /*La zone de texte*/
+        section:nth-of-type(4)> div:nth-of-type(1){ 
+            width: 50%;
+            padding:5%;
+            background-color: #141E61;
+            color: #A2D3FD;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        /*Les deux zones de couleurs de la section*/
+        section:nth-of-type(4)> div:nth-of-type(2){ 
+            width: 10%;
+            background-color: #4F7FC2;
+            margin-left:0px;
+            margin-right: 0px;
+
+        }
+        section:nth-of-type(4)> div:nth-of-type(3){ 
+            width: 10%;
+            background-color: #A2D3FD;
+            margin-left:0px;
+            margin-right: 0px;
+        }
+
+
+        /*CSS valable sur la quatrième partie : Epreuves*/
+        /*Général de la section*/
+        section:nth-of-type(5){
+            margin-bottom: 100px;
+            margin-bottom: 15%;
+        }
+
+        section:nth-of-type(5) > h2 {
+            position: relative;
+            display: flex;
+            justify-self: flex-end;
+            background-color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 7%;
+            z-index: 2;
+        }
+
+        section:nth-of-type(5) > div{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section:nth-of-type(5) > div > article {
+            position: relative;
+            display: inline-block;
+            width: 42%;
+            background-color: #141E61;
+            padding-left: 5px;
+            padding-right: 40px;
+            padding-bottom: 20px;
+            z-index: 2;
+        }
+
+        section:nth-of-type(5) > div > article > h3{
+            color: white;
+            padding-left: 40px;
+        }
+
+        section:nth-of-type(5) > div > article:first-of-type > h3{
+            text-align:right;
+        }
+
+        section:nth-of-type(5) > div > article > ul > li { 
+            display: block;
+            padding-left: 2%;
+            padding-top: 3%;
+            height: 40px;
+            margin-bottom: 15px;
+            background-color: #A2D3FD;
+        }
+
+        /*Animation de survol*/
+        section:nth-of-type(5) > div > article > ul > li:hover{
+            background-color: white;
+        }
+
+        a{
+            color: #141E61;
+            text-decoration: none;
+        }
+
+        /*Rectangle rouge en fond*/
+        section:nth-of-type(5) > div > div{
+            position: absolute;
+            left:5%;
+            top:-5%;
+            border-style: solid;
+            border-color: #f50022;
+            border-width: 1px;
+            width: 90%;
+            height: 110%;
+            display: flex;
+            z-index: 1;
+        }
+
+
+        /*CSS valable sur la cinquième partie : Profils*/
+        /*Général de la section*/
+
+        section:nth-of-type(6){
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 0%;
+        }
+
+        /*Chaque partie avec un profil*/
+        section:nth-of-type(6) > div{
+            width: 8%;
+            flex-shrink: 0;
+        }
+
+        /*Les images de chaque profil*/
+        section:nth-of-type(6) > div > img:first-of-type {
+            position: absolute;
+            width: 10%;
+            z-index: 1;
+            bottom: 0px;
+            display: flex;
+            z-index: 1;
+        }
+
+        /*L'image de fond des profils*/
+        section:nth-of-type(6) > div > img:nth-of-type(2){
+            position: relative;
+            width: 70%;
+            margin-left: 28%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        /*Le texte de chaque profil*/
+        section:nth-of-type(6) > div > a > p {
+            position: relative;
+            z-index: 2;
+            padding-left: 20px;
+            font-size: 16px;
+        }
+
+        /*Gestion des lignes marrons et jaunes*/
+        main > div {
+            width: 100%;
+        }
+
+        main > div:first-of-type {
+            position: relative;
+            height: 91px;
+            background-color: #FFE26E;
+            z-index: 1;
+        }
+
+        main > div:nth-of-type(2) {
+            position: relative;
+            top: -75px;
+            height: 59px;
+            background-color: #AD5655;
+            z-index: 2;
+        }
+
+
+        /*CSS valable sur la cinquième partie : Tableau*/
+        /*Général de la section*/
+
+        section:nth-of-type(7){
+            position: relative;
+        }
+
+        section:nth-of-type(7) > div{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+
+        /*Gestion de l'image en haut*/
+        section:nth-of-type(7) > img:first-of-type {
+            position: absolute;
+            left:-85px;
+            top:-200px;
+            z-index: 3;
+        }
+
+        /*Gestion du tableau*/
+        table {
+            width: 65%;
+            margin-right: 5%;
+        }
+
+        tr{
+            height: 60px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            margin-bottom: 15px;
+        }
+
+        /*Titre du tableau*/
+        table > caption{
+            position: relative;
+            z-index: 2;
+            align-items: center;
+            background-color: #B0125E;
+            color: white;
+            height: 82px;
+            margin-bottom: 15px;
+            font-size: 36px;
+            font-style: bold;
+        }
+
+        /*Première ligne du tableau*/
+        table > thead > tr > td {
+            text-align: center;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+        }
+
+        table > thead > tr > td:nth-of-type(3) {
+            background-color: #FFE26E;
+            color: #FFE26E;
+            border-color: #FFE26E;
+        }
+
+        table > thead > tr > td:nth-of-type(4) {
+            background-color: #A2D3FD;
+            color: #A2D3FD;
+            border-color: #A2D3FD;
+        }
+
+        table > thead > tr > td:nth-of-type(5) {
+            background-color: #AD5655;
+            color: #AD5655;
+            border-color: #AD5655;
+        }
+
+        /*Corps du tableau*/
+        table > tbody > tr {
+            background-color: white;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: inset 0 0 1px 2px #4F7FC2;
+            width: 2%;
+        }
+
+        /*Image de fonc du tableau*/
+        section:nth-of-type(7) > img:last-of-type {
+            width: 100%;
+            position: absolute;
+            top:50%;
+            left: -50%;
+            z-index: -1;
+        }
+    }
+    
+    .epreuve { /*Css de la page d'épreuve*/
+              
+        /*Modifications générales*/
+
+
+        body{
+            text-align: center;
+        }
+        
+        table{
+            border-collapse: collapse;
+            
+        }
+    
+        thead{
+            background-color: #FFE26E;
+        }
+        tbody{
+            background-color: #fff;
+        }
+        th,td{
+            border: 1px solid #000;
+        }
+    
+        /*Modifications liées au Titre*/
+    
+            section>div:first-of-type{
+            background-image: url("images/epreuve/image_titre.webp");
+            background-size: cover;
+            color: #fff;
+            height: 895px;
+            width: 100%;
+        }
+        h1:first-of-type::first-letter{
+            font-family: "Amoresa"; src:"polices/Amoresa.ttf";
+        }
+            section>div:first-of-type>h1:nth-of-type(2){
+            font-size: 110px;
+            position: relative;;
+            bottom: 0;
+        }
+
+        section>div:first-of-type>h1{
+            text-indent: 0.25em;
+        }
+
+        section>div:first-of-type>h1:nth-of-type(1){
+            padding-top: 2.5%;
+        }
+    
+        /*Modifications liées à la présentation de l'épreuve et du site */
+    
+            section>div:nth-of-type(2){
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            position: relative;
+        }
+            section>div:nth-of-type(2)>img:first-of-type{
+            display: none;
+        }
+            section>div:nth-of-type(2)>img{
+            width: 30%;
+            height: 100%;
+        }
+            section>div:nth-of-type(2)>div{
+            background-color: #141E61;
+            width: 25%;
+            height: 45%;
+        }
+            section>div:nth-of-type(2)>div:first-of-type{
+            position: absolute;
+            top: 0;
+            left:0;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(2){
+            display: none;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(3){
+            position: absolute;
+            top:70%;
+            left: 15%;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(4){
+            position: absolute;
+            left: 60%;
+            top: 70%;
+            z-index: -1;
+        }
+            section>div:nth-of-type(2)>div:nth-of-type(5){
+            position: absolute;
+            right: 0;
+            top:0;
+            z-index: -1;
+    
+        }
+            section>div:nth-of-type(2)>article:first-of-type{
+            width: 44%;
+            height: auto;
+            position: relative;
+            left:0;
+            top: 30px;
+            background-color: #fff;
+            border-radius: 25px;
+        }
+            section>div:nth-of-type(2)>article:first-of-type>p{
+            width: 90%;
+        }
+            section>div:nth-of-type(2)>article:nth-of-type(2){
+            width: 44%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            left: 0;
+            top: 30px;
+            border-radius: 25px;
+            background-color: #fff;
+        }
+    
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            width: 100%;
+            height: 56%;
+        }
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div>p{
+            width: 59%;
+            height: 75%;
+        }
+    
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div>img{
+            width: 41%;
+            height: auto;
+            margin: 1em;
+        }
+            section>div:nth-of-type(2)>article:nth-of-type(2)>div>img:hover{
+            width: 70%;
+        }
+    
+        
+        /*Modifications liées à l'explication du Déroulement de l'épreuve*/
+    
+            section>article:first-of-type>div{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+            margin-top: 200px;
+        }
+            section>article:first-of-type>div>h2{
+            margin: 0;
+        }
+            section>article:first-of-type>div> hr{
+            color: #F50022 ;
+            background-color: #F50022;
+            width:54%;
+            height: 10px;
+            border: solid;
+        }
+    
+            section>article:first-of-type>div>p{
+            width: 700px;
+        }
+    
+            section>article:first-of-type+img{
+            width: 16%;
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: 1700px;
+        }
+    
+        /*Modifications liées au podium*/
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>h2{
+            margin: 0;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div{
+            border-radius: 10px;
+            width: 18vw;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2vh 4vw 0;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>img{
+            width: 55px;
+            height: 55px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>div{
+            font-size: 36px;
+            margin: 10px 0;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:first-of-type{
+            background-color: #FFE26E;
+        }
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:nth-of-type(2){
+            background-color: #A2D3FD;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div:nth-of-type(3){
+            background-color: #AD5655;
+        }
+    
+            section>div:nth-of-type(3)>div:nth-of-type(2)>article>div>div>figure>img{
+            width: 90px;
+            height: 90px;
+        }
+    
+            section>div:nth-of-type(3)>div:first-of-type{
+            background-color: #141E61;
+            width: 80%;
+            height: 500px;
+            position: absolute;
+            z-index: -1;
+            left: 8%;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(2){
+            background-color: #fff;
+            width: 80%;
+            height: 500px;
+            position: absolute;
+            z-index: 0;
+            left: 10%;
+            margin-top: 60px;
+            border-radius: 25px;
+        }
+            section>div:nth-of-type(3)>div:nth-of-type(3){
+            background-color: #F50022;
+            width: 80%;
+            height: 500px;
+            position: absolute;
+            z-index: -2;
+            left: 12%;
+            margin-top: 90px;
+            border-radius: 10px;
+        }
+    
+        /*Modifications liées au tableau des résultats*/
+    
+            section>article:nth-of-type(2){
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin-top: 40em;
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+    
+            section>article:nth-of-type(2)>h2{
+            margin: 0;
+            width: 48%;
+            height: 15vh;
+            position: relative;
+            left: 26%;
+            margin-bottom: 4vh;
+        }
+    
+            section>article:nth-of-type(2)> hr{
+            background-color: #141E61;
+            width: 54%;
+            height: 9px;
+            position: relative;
+            left: 0;
+        }
+    
+            section>article:nth-of-type(2)>div>table{
+            width: 95%;
+            height: 90%;
+            margin: 30px;
+            margin-top: 3vh;
+        }
+    
+            section>article:nth-of-type(2)>div:first-of-type{
+            width: 80%;
+            height: 40vh;
+            position: relative;
+            background-color: #fff;
+            z-index: -1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 10px;
+            left: 10%;
+        }
+    
+            section>article:nth-of-type(2)>div:nth-of-type(2){
+            background-color: #141E61;
+            width: 25%;
+            height: 15vh;
+            position: absolute;
+            left: 8%;
+            top: 80%;
+            z-index: -2;
+        }
+    
+            section>article:nth-of-type(2)>div:nth-of-type(3){
+            background-color: #141E61;
+            width: 25%;
+            height: 15vh;
+            position: absolute;
+            z-index: -2;
+            top: 80%;
+            right: 8%;
+        }
+    
+        /*Modifications liées au Moments Forts de l'épreuve*/
+    
+            section>article:nth-of-type(3){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #141E61;
+            width: 100%;
+            height: 60vh;
+            position: relative;
+            z-index: -2;
+            margin-top: 8em;
+        }
+    
+            section>article:nth-of-type(3)>h2{
+            color: #fff;
+            width: 31%;
+            height: 2vh;
+            position: absolute;
+            left: 32.5%;
+            top: -10px;
+        }
+    
+            section>article:nth-of-type(3)>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    
+            section>article:nth-of-type(3)>div>figure{
+            width: 33%;
+            height: 3vh;
+        }
+    
+            section>article:nth-of-type(3)>div>div{
+            background-color: #F50022;
+            width: 14%;
+            height: 18vh;
+        }
+    
+            section>article:nth-of-type(3)>div>div:first-of-type{
+            position: absolute;
+            left: 2%;
+            top: 6vh;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(2){
+            position: absolute;
+            left: 25%;
+            top: 36vh;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(3){
+            position: absolute;
+            right: 29%;
+            top: 36vh;
+            z-index: -1;
+        }
+            section>article:nth-of-type(3)>div>div:nth-of-type(4){
+            position: absolute;
+            left: 80% ;
+            top: 6vh;
+            z-index: -1;
+        }
+    
+            section>article:nth-of-type(3)>div>img{
+            width: 20%;
+            height: auto;
+            position: absolute;
+            left: 38.5%;
+            top: 20vh;
+            z-index: -1;
+        }
+    
+            section>article:nth-of-type(3)>div>figure>img{
+            width:33% ;
+            height:40vh ;
+            position: absolute;
+            left: 4%;
+            top: 10vh;
+        }
+    
+            section>article:nth-of-type(3)>div>video{
+            width: 33%;
+            height: 40vh;
+            position: absolute;
+            right: 8%;
+            top: 10vh;
+        }
+    
+        /*Modifications liées aux Récapitulatif des records*/
+    
+            section>article:nth-of-type(4){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+        }
+    
+            section>article:nth-of-type(4)>h2{
+            width: 90%;
+            margin: 0;
+        }
+    
+            section>article:nth-of-type(4)>div>table{
+            width: 90%;
+            height: 90%;
+            margin-top: 6v;
+            margin-left:  5vh;
+        }
+    
+            section>article:nth-of-type(4)>div:first-of-type{
+            background-color: #fff;
+            width: 62.5%;
+            height: 45vh;
+            position: relative;
+            z-index: -1;
+            left: 0%;
+            top: 0%;
+            border-radius: 25px;
+            margin-top: 18vh;
+        }
+    
+            section>article:nth-of-type(4)>div:nth-of-type(2){
+            background-color: #F50022;
+            width: 62.5%;
+            height: 45vh;
+            position: absolute;
+            border-radius: 10px;
+            left: 21%;
+            top: 25%;
+            z-index: -2 ;
+            margin-top: 20vh;
+        }
+    
+            section>article:nth-of-type(4)>img{
+            width: 17%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            top: 40%;
+        }
+    
+        /*Modifications liées au footer*/
+    
+        +footer{
+            position: relative;
+            top: 5em;
+        }
+    }
+
+    .profil { /*Css de la page des profilssportifs */
+        
+        /**********************************************************************/
+        /*mise en forme des images*/
+        /**********************************************************************/
+    
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    
+        .section1 > img { /*image des médailles*/
+            position: absolute;
+            top: 100%;
+            bottom: -130px;
+            left: 60%;
+            width: 500px;
+            height: 150px;
+            transition: all 0.2s linear; 
+        }
+    
+        .section1 > img:hover {
+            transform: scale(1.5) ;
+        }
+    
+        .drapeau_france{ /*image du drapeau francais circulaire*/
+            width: 250px;
+            height: 250px;
+            position: relative;
+            left: -10%;
+        }
+    
+        section > figure > img:last-child { /*image du logo de natation*/
+            width: 360px;
+            height: 250px;
+            position: relative;
+            left: -200px;
+        }
+    
+        section > nav > img { /*groupe des images de insta, facebook et hashtag*/
+            width: 75px;
+            height: 75px;
+            position: relative;
+            left: 5%;
+        }
+    
+        /**********************************************************************/
+        /*mise en forme de la premiere section*/
+        /**********************************************************************/
+    
+        .section1{ /*image de léon marchand*/
+            position: relative; /*permet de ne pas influer sur le positionnement des autres éléments*/
+            background-color: #141E61;
+            height: auto;
+            width: 100%;
+            background-image: url(images/profil/Léon_marchand.webp); /*image de léon marchand*/
+            background-repeat: no-repeat;
+            background-size: 60% 100%;       /*width puis height*/
+            background-position: right; /*permet de */
+            margin-bottom: 20%;
+            margin-top: 150px;
+        }
+    
+        .image_Léon {
+            display: none;
+        }
+    
+        .section1 > figure { /*images de le france et natation*/
+            display: flex;
+            flex-direction: column; /*permet d'influer sur la direction des éléments, ils sont tous en colonne*/
+            justify-content: center; /*place les éléments au milieu du bloc parent*/
+            position: relative; /*place précisement les éléments*/
+            bottom: -30%;
+            left: 15%;
+            padding: 10px;
+        }
+    
+        .section1 > nav { /*images des logos insta et tout*/
+            display: flex;
+            flex-direction: row; /*permet d'influencer sur la direction des éléments, ils sont tous en ligne*/
+            position: relative;
+            left: 0%;
+            bottom: -40%;
+        }
+    
+        .section1 > figure > img { /*images de la france et du logo de la natation*/
+            padding: 20px; /*espace les éléments entre eux*/
+        }
+    
+        .section1 > nav > img { /*images insta, facebook et hashtag*/
+            padding: 30px; /*espace les éléments entre eux*/
+        }
+    
+        .section1 > h1 { /*titre leon marchand*/
+            position: relative;
+            bottom: 10px;
+            color: white;
+            font-size: 128px;
+            font-weight: bolder;
+            padding: 3px;
+            left: 10%;
+            font-family: 'Cinzel', serif;
+        }
+    
+        .section1 > h1::first-letter { /*premiere lettre du titre*/
+            font-family: 'Amoresa', cursive;
+            font-size: 128px;
+        }
+    
+        .section1 > img:hover {
+            transform: scale(1.5) translateY(25px) ;
+        }
+    
+        /**********************************************************************/
+        /*mise en forme de la deuxième section*/
+        /**********************************************************************/
+    
+        .section2 { /*classe définissant la deuxième section*/
+            position: relative;
+            margin-top: 50px;
+            z-index: 1; /*pour mettre en avant plan car les autres parties se saccadet*/
+            background-color: #141E61;
+            padding: 10px;
+            margin-bottom: 5%;
+        }
+    
+        .section2 > h2 { /*sous titre de la deuxième partie*/
+            display: flex;
+            justify-content: center;
+            font-variant: small-caps;
+            color: #fff;
+            font-weight:bold;
+            font-size: 128px;
+            font-family: 'Cinzel', serif;
+        }
+    
+        .section2 > article { /*article de la deuxième partie*/
+            position: relative;
+            height: auto;
+            width: 90%;
+            z-index: 1;
+            background-color: #fff;
+            border-radius: 65px;
+            margin-left: 2%;
+            padding: 50px;
+            margin-bottom: 60px;
+        }
+    
+        .section2 > article > h3 { /*sous-titre de la deuxième partie*/
+            font-size: 100px;
+        }
+    
+        .section2 > article > h3 + p { /*paragraphe de la deuxième partie*/
+            font-size: 36px;
+            text-align:left;
+            position: relative;
+            left: 3%;
+            margin: 40px;
+        }
+    
+        .section2 > article > h3 + ul + h3 {
+            position: relative;
+            left: 3%;
+        }
+    
+    
+        .section2 > article > ul > li { /*liste de l'article de la dexième partie*/
+            font-size: 36px;
+        }
+    
+        .block_rouge1, .block_rouge2, .block_rouge3, .block_rouge4 {
+            position: absolute; /* Positionnement absolu relatif à .section2 */
+            background-color: red;
+            min-width: 300px;
+            width: 600px; /* Largeur des carrés */
+            height: 200px; /* Hauteur des carrés */
+        }
+    
+        .block_rouge1 { /*mise en place des blocks rouges en arrière plan*/
+            top: 17%;
+            left: 30px;
+        }
+    
+        .block_rouge2 {
+            bottom: 30px;
+            left: 30px;
+        }
+    
+        .block_rouge3 {
+            top: 17%;
+            right: 20px;
+        }
+    
+        .block_rouge4 {
+            bottom: 30px;
+            right: 20px;
+        }
+    
+        /**********************************************************************/
+        /*mise en place de la 3eme section, club de sport*/
+        /**********************************************************************/
+    
+        .section3 { /*classe définissant la troisième partie*/
+            position: relative;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            margin-left: 1%;
+            background-color: #fff;
+            border: 15px solid black;
+            background-image: url(images/profil/club_dauphins_TOEC.webp);
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: 40% 100%; /*image redimmensionné proportionnellement*/
+            height: auto;
+            width: 96%;
+    
+        }
+    
+        .section3 > article {
+            position: relative;
+            z-index: 5;
+        }
+    
+        .section3 > article > div {  /*conteneur de l'image*/
+            display: flex; /*conteneur de l'image en flex pour pouvoir placer l'image au milieu*/
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px; 
+        }
+    
+        .section3 > article > div > img { /*image du dauphin du TOEC*/
+            position: absolute;
+            z-index: -1;
+            width: 20%; 
+            height: 80%;
+            top: 1%;
+        }
+    
+        section > article > h2 { /*sous-titre de la troisième partie*/
+            position: relative;
+            top: 0px;
+            left: 4%;
+            font-size: 128px;
+            font-family: 'Cinzel', serif;
+        }
+    
+        section > article > h2 + h3 {
+            position: relative;
+            left: 2%;
+            top: 0px;
+            font-size: 100px;
+        }
+    
+        section > article > h2 + h3 + p {
+            position: relative;
+            left: 2%;
+            width: 40%;
+            font-size: 36px;
+        }
+    
+        .block_bleu1, .block_bleu2 {
+            position: absolute; /* Positionnement absolu relatif à .section2 */
+            z-index: -1;
+            background-color: #141E61;
+            width: 50%; /* Largeur des carrés */
+            height: 40%; /* Hauteur des carrés */
+        }
+        .block_bleu1 {
+            bottom: -7%;
+            right: -2%;
+        }
+    
+        .block_bleu2 {
+            top: -7%;
+            left: -2%;
+        }
+    
+        /**********************************************************************/
+        /*mise en place du titre et de la 4eme partie*/
+        /**********************************************************************/
+    
+        .separateur {
+            background-color: #141E61;
+            margin-top: 3%;
+            width: 95%;
+            padding: 2em;
+            height: 20em;
+            display: flex;
+            justify-content: center;
+            background-image: url(images/header/logo_flamme_JO.webp);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 200px 150px;
+            color: #fff;
+            margin-left: 1%;
+        }
+    
+        .separateur >  h2 {
+            color: #fff;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+        }
+    
+        section > article > table {
+            position: relative;
+            left: 5%;
+            margin-top: 5%;
+            width: 60%;
+            height: 100px;
+            border: 5px solid black;
+        }
+    
+        .article1 > img {
+            position: absolute;
+            width: 10%;
+            height: 1150px;
+            right: 5%;
+            top: 6000px;
+        }
+    
+        th {
+            height: 3em;
+            width: 1em;
+        }
+    
+        td {
+            height: 3em;
+            width: 3em;
+            font-size: 38px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    
+        .article1 > table > thead > tr > th + th + th + th {
+            background-color: #AD5655;
+            background-image: url(images/profil/medaille_3.webp);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+            height: 200px;
+            width: 400px;
+        }
+    
+        .article1 > table > thead > tr > th + th + th {
+            background-color: #AD5655;
+            background-image: url(images/profil/medaille_2.webp);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+            height: 200px;
+            width: 400px;
+        }
+    
+        .article1 > table > thead > tr > th + th {
+            background-color: #AD5655;
+            background-image: url(images/profil/medaille_1.webp);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+            height: 200px;
+            width: 300px;
+        }
+    
+        .article1 > table > thead > tr > th + th + th {
+            background-color: #A2D3FD;
+        }
+    
+        .article1 > table > thead > tr > th + th {
+            background-color: #FFE26E;
+        }
+    
+        .table2 {
+            display: none;
+        }
+    
+        td > video {
+            height: 200px;
+            width: 300px;
+            position: relative;
+            left: 1%;
+            margin: 20px;
+        }
+    
+        /**********************************************************************/
+        /*mise en place de la 5eme partie*/
+        /**********************************************************************/
+    
+        .section5 {
+            display: flex;
+            flex-direction: column; /* Aligne les éléments en colonne */
+            justify-content: center; /* Centre les éléments verticalement */
+            align-items: center; /* Centre les éléments horizontalement */
+            width: 100%; /* Prend toute la largeur de la page */
+            height: auto; /* Prend toute la hauteur de la page */
+            padding: 20px; /* Optionnel, ajoute un peu d'espace autour des éléments */
+        }
+    
+        .section5 > article {
+            margin-top: 200px;
+            background-color: #141E61;
+            height: auto;
+            color: #fff;
+            width: 1000px;
+            height: auto;
+            margin-bottom: 50px;
+        }
+    
+        .section5 > article > video {
+            width: 500px; /* Ajuste la largeur pour qu'elle s'adapte */
+            height: 300px;
+            background-color: black;
+            position: absolute;
+            left: 45%;
+            margin-top: 50px;
+        }
+    
+        .section5 > article > p {
+            font-size: 36px;
+            position: relative;
+            margin: 10%;
+        }
+    
+        .section5 > article > h3 {
+            font-size: 100px;
+            top: 10%;
+        }
+    
+        .section5 > article > p + h3 + p {
+            font-size: 38px;
+        }
+    
+        .section5 > img {
+            position: absolute;
+            z-index: -1;
+            height: auto;
+            width: 150%;
+            right: -35em;
+            bottom: 100em;
+        }
+    }
+}
+
+/* animations */
+
+@keyframes carousel-slide {
+    0% {
+      transform: translateX(0); /* Show the first image */
+    }
+    14.28% {
+      transform: translateX(0); /* Pause on the first image */
+    }
+    17.85% {
+      transform: translateX(calc(calc(100% / 7) * -1)); /* Slide to the second image */
+    }
+    31.13% {
+      transform: translateX(calc(calc(100% / 7) * -1)); /* Pause on the second image */
+    }
+    34.7% {
+      transform: translateX(calc(calc(100% / 7) * -2)); /* Slide to the third image */
+    }
+    47.98% {
+      transform: translateX(calc(calc(100% / 7) * -2)); /* Pause on the third image */
+    }
+    51.55% {
+      transform: translateX(calc(calc(100% / 7) * -3)); /* Slide to the fourth image */
+    }
+    64.83% {
+      transform: translateX(calc(calc(100% / 7) * -3)); /* Pause on the fourth image */
+    }
+    68.4% {
+      transform: translateX(calc(calc(100% / 7) * -4)); /* Slide to the fifth image */
+    }
+    81.68% {
+      transform: translateX(calc(calc(100% / 7) * -4)); /* Pause on the fifth image */
+    }
+    85.25% {
+      transform: translateX(calc(calc(100% / 7) * -5)); /* Slide to the sixth image */
+    }
+    98.53% {
+      transform: translateX(calc(calc(100% / 7) * -5)); /* Pause on the sixth image */
+    }
+    100% {
+      transform: translateX(calc(calc(100% / 7) * -6)); /* Slide to the duplicate (seamless transition) */
+    }
+}
+
+/*polices*/
+@font-face {
+    font-family: Amoresa;
+    src: url(polices/Amoresa.ttf);
+}
+
+@font-face {
+    font-family: Cinzel;
+    src: url(polices/Cinzel-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(polices/Montserrat-Regular.ttf);
+}
