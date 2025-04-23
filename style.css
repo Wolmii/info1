@@ -1,0 +1,16 @@
+.libelle{
+	-fx-font-size : 16;
+	-fx-font-weight : bold;
+}
+
+.onglet{
+	-fx-background-color : burlywood;
+	-fx-font-weight : bold;
+	-fx-text-fill : brown;
+}
+
+.bouton{
+	-fx-font-weight : bold;
+	-fx-background-color : chocolate;
+}
+

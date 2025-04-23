@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="332.0" prefWidth="600.0" styleClass="onglet" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Informations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <VBox layoutX="2.0" layoutY="-30.0" prefHeight="200.0" prefWidth="500.0" spacing="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <Label prefWidth="100.0" styleClass="libelle" text="IMMAT :">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <Label prefWidth="100.0" styleClass="libelle" text="Marque : ">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <Label prefWidth="100.0" styleClass="libelle" text="Modele :">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField />
+                                    <Button mnemonicParsing="false" styleClass="bouton" text="Voir moins">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <Label prefWidth="70.0" text="Cylindrée :" />
+                                    <TextField prefWidth="50.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label text="cm3" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <Label prefWidth="70.0" text="PTAC : " />
+                                    <TextField prefWidth="50.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label text="kg" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Interventions">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="5.0" prefHeight="291.0" prefWidth="593.0" spacing="10.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefWidth="120.0" styleClass="libelle" text="Kilométrage : " />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Label prefWidth="100.0" styleClass="libelle" text="Date" />
+                                    <Label styleClass="libelle" text="Libellé" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField prefWidth="100.0" />
+                                    <TextField prefWidth="300.0" />
+                                    <Button mnemonicParsing="false" prefWidth="80.0" styleClass="bouton" text="Suppr." />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField prefWidth="100.0" />
+                                    <TextField prefWidth="300.0" />
+                                    <Button mnemonicParsing="false" prefWidth="80.0" styleClass="bouton" text="Suppr." />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField prefWidth="100.0" />
+                                    <TextField prefWidth="300.0" />
+                                    <Button mnemonicParsing="false" prefWidth="80.0" styleClass="bouton" text="Suppr." />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" prefWidth="80.0" styleClass="bouton" text="Ajouter" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <HBox alignment="BOTTOM_RIGHT">
+         <children>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" styleClass="bouton" text="Fermer" textAlignment="CENTER" />
+         </children>
+         <padding>
+            <Insets right="20.0" top="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
