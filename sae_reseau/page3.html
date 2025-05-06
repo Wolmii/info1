@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>League of legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1>League of Legends</h1>
+        <section>
+            <h2>Histoire</h2>
+        </section>
+        <section>
+            <h2>Gameplay</h2>
+        </section>
+        <section>
+            <h3>Autre jeux</h3>
+        </section>
+    </main>
+    <footer>
+        <p>La date du jour : <span id="date"></span></p>
+        <script>
+            function afficherDate() {
+                var dateActuelle = new Date();
+                var jour = dateActuelle.getDate();
+                var mois = dateActuelle.getMonth() + 1; // Les mois commencent à 0, donc on ajoute 1
+                var annee = dateActuelle.getFullYear();
+    
+                // Format de la date : Jour/Mois/Année
+                var dateFormattee = jour + '/' + mois + '/' + annee;
+    
+                // Affichage de la date dans l'élément avec l'id "date"
+                document.getElementById("date").textContent = dateFormattee;
+            }
+    
+            // Appel de la fonction pour afficher la date dès que la page est chargée
+            afficherDate();
+        </script>
+
+        <p>Votre terminal : <span id="terminal"></span></p>
+        <script>
+            function afficherOS() {
+                var os = "Système d'exploitation non détecté";
+                
+                // Récupérer l'agent utilisateur (User Agent) du navigateur
+                var userAgent = navigator.userAgent.toLowerCase();
+                
+                // Détection du système d'exploitation
+                if (userAgent.indexOf("win") !== -1) {
+                    os = "Windows";
+                } else if (userAgent.indexOf("mac") !== -1) {
+                    os = "Mac OS";
+                } else if (userAgent.indexOf("linux") !== -1) {
+                    os = "Linux";
+                } else if (userAgent.indexOf("android") !== -1) {
+                    os = "Android";
+                } else if (userAgent.indexOf("iphone") !== -1 || userAgent.indexOf("ipad") !== -1) {
+                    os = "iOS";
+                }
+    
+                // Affichage du système d'exploitation dans l'élément avec l'id "terminal"
+                document.getElementById("terminal").textContent = os;
+            }
+    
+            // Appel de la fonction pour afficher le système d'exploitation dès que la page est chargée
+            afficherOS();
