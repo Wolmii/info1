@@ -1,0 +1,109 @@
+body{
+    margin : 0px;
+    padding: 0px;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color:palevioletred;
+    width: 100%;
+    background-size: cover;
+    text-align: center;
+    font-size: 60px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: palevioletred;
+    color: white;
+}
+
+footer{
+    background-color: palevioletred;
+    color: white; 
+    margin: 0%;
+    padding: 0%;
+}
+
+h2{
+    color:pink;
+    text-align: center;
+    font-size: 40px;
+}
+
+h3{
+    color:pink;
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+p{
+    margin : 10px
+}
+
+section{
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+section:nth-of-type(2){
+    width: 60%;
+    text-align: center;
+}
+
+section > article {
+    display: flex;
+    flex-direction: row;
+}
+
+ul > p{
+    background-color: #FFEFF9;
+}
+
+.presentation h1 {
+    background-image: url(images/\(੭˃̵ᴗ˂̵\)੭\ 𝟭𝗸𝗶𝘀𝘀𝟰𝗺𝗲\ ࣪₊♡.jpeg);
+    height: 500px;
+}
+
+.island img:first-of-type{
+    width: 70%;
+    align-self: center;
+}
+
+.island section > article > img:first-of-type {
+    height: 100%; 
+}
+
+.island section > article > img:nth-of-type(2) {
+    height: 10em;
+}
+
+.island section:nth-of-type(2) {
+    width: 70%;
+    border-width: 10px;
+    border-color: palevioletred;
+    border-style: dotted;
+}
+
+.island section:first-of-type {
+    text-align: center;
+}
+
+.island section:first-of-type > img{
+    margin : 2%;
+}
+
+.island {
+    background-color: #FFEFF9;
+}
+
+.island section{
+    background-color: white;
+}
