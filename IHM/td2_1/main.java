@@ -1,13 +1,12 @@
-package ex2;
+package td2_1;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class EX2 extends Application {
+public class main extends Application{
 	public void start(Stage maFenetre){
-		maFenetre=new Fenetre();
+		maFenetre=new ancher();
 		maFenetre.show();
-		
 	}
 	
 	public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package ex2;
+package ex1;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class EX2 extends Application {
+public class EX1 extends Application {
 	public void start(Stage maFenetre){
 		maFenetre=new Fenetre();
 		maFenetre.show();
