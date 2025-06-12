@@ -75,8 +75,8 @@ public class CtrlCommande {
     	
     	mttFraises.bind(poidsFraises.multiply(PRIX_FRAISE));
         
-    	poidsFraises.bind(Bindings.createDoubleBinding( ()->
-    	Double.parseDouble(txtPoidsFraises.getText()),txtPoidsFraises.textProperty())
+    	poidsFraises.bind(Bindings.createFloatBinding( ()->
+    	Float.parseFloat(txtPoidsFraises.getText()),txtPoidsFraises.textProperty())
     	);
     	
     	montantFraises.textProperty().bind(Bindings.createStringBinding( () ->
@@ -93,13 +93,17 @@ public class CtrlCommande {
     	
        	
        	// liaison entre le montant total de la commande et les montants partiels (A FAIRE)
-    	montantTotal=add(prixF,prixFr,prixG);
+	SimpleFloatProperty mtt = new SimpleFloatProperty(); 
+
+	mtt=Bindings.add(mttFramboises,Bindings.add(mttGroseilles,mttFraises));
+		
+	montantTotal.textProperty().bind(Bindings.createStringBinding( () ->
+    	String.valueOf(mtt.get()), mtt));
+	    
 
     	
     	
-    	while(total.getText=="0") {
-    		bnPrecedent.setDisable(true);
-    	}
+	bnPrecedent.disabledProperty().bind(Bindings.createBooleanBinding(() -> montantTotal == 0, mtt)
        	
     }
 
